@@ -1,8 +1,18 @@
-title: Just the Docs Template
-description: A starter template for a Jeykll site using the Just the Docs theme!
+title: Math4AI
+description: Math4AI site (MSc AI, UvA).
 theme: just-the-docs
 
-url: https://just-the-docs.github.io
+url: https://FloorEijkelboom.github.io/math_site
 
-aux_links:
-  Template Repository: https://github.com/just-the-docs/just-the-docs-template
+aux_links: # remove if you don't want this link to appear on your pages
+  Template Repository: https://github.com/FloorEijkelboom/math_site
+
+search_enabled: true
+
+mermaid:
+  version: "9.1.3"
+
+callouts:
+  warning:
+    title: Warning
+    color: red
