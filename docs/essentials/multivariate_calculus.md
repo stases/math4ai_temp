@@ -3,6 +3,7 @@ layout: default
 parent: Essentials
 nav_order: 2
 title: Multivariate Calculus
+has_children: true
 ---
 
 # Multivariate Calculus
