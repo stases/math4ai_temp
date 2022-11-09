@@ -2,10 +2,10 @@ title: Math4AI
 description: Math4AI site (MSc AI, UvA).
 theme: just-the-docs
 
-url: https://FloorEijkelboom.github.io/math_site
+url: https://FloorEijkelboom.github.io/math4ai
 
 aux_links: # remove if you don't want this link to appear on your pages
-  Template Repository: https://github.com/FloorEijkelboom/math_site
+  Template Repository: https://github.com/FloorEijkelboom/math4ai/
 
 search_enabled: true
 
