@@ -55,5 +55,5 @@ of you being able to differentiate any ML/DL type of function.
 
 We do now want to spend too much time on basic differentiation techniques and rather give you a general approach to 
 differentiation from which things such as the sum rule, product rule, chain rule, et cetera, will follow directly. 
-If you need a refresher on the basic derivative rules, we included them in **HERE (add)**. Let us now 
+If you need a refresher on the basic derivative rules, we included them in [this section](../../derivative_rules). Let us now 
 dive into the actual derivatives!
