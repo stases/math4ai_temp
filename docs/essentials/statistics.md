@@ -3,6 +3,7 @@ layout: default
 parent: Essentials
 nav_order: 3
 title: Statistics
+has_children: true
 ---
 
 # Statistics

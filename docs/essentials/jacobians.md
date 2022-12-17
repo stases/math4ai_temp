@@ -125,13 +125,13 @@ This gives us the following derivative:
 
 $$ \sum_{k=1}^n \sum_{j=1}^m \frac{d}{dx_i} y_{k}A_{kj}x_j = \sum_{k=1}^n \sum_{j=1}^m \delta_{ij} y_k A_{kj} = \sum_{k=1}^n  y_k A_{ki}.$$
 
-But this term we recognize as $$[\mathbf{y^TA}]_i$$. This means that our full derivative is simply given by $$\mathbf{y^TA}$$, 
+But this term we recognize as $$[\mathbf{y^T A}]_i$$. This means that our full derivative is simply given by $$\mathbf{y^T A}$$, 
 which aligns with our desired shape so we are done. 
 
 So... That's quite a lot of work. And actually, we could have done way less work using our previous identities. 
-Observe that $$\mathbf{y^TA}$$ is just a row vector, i.e. it can be written as $$\mathbf{v^T = y^TA}$$ for some vector 
-$$\textbf{v}$$. Thus, we can write $$\mathbf{y^TAx = v^Tx}$$. But this we know how to differentiate with our tricks, that is 
-$$\frac{d}{d\textbf{x}} \mathbf{v^Tx} = \mathbf{v^T}$$, and hence we know that $$\frac{d}{d\textbf{x}} \mathbf{y^TAx} = \mathbf{y^T A}$$.
+Observe that $$\mathbf{y^T A}$$ is just a row vector, i.e. it can be written as $$\mathbf{v^T = y^T A}$$ for some vector 
+$$\textbf{v}$$. Thus, we can write $$\mathbf{y^T Ax = v^T x}$$. But this we know how to differentiate with our tricks, that is 
+$$\frac{d}{d\textbf{x}} \mathbf{v^T x} = \mathbf{v^T}$$, and hence we know that $$\frac{d}{d\textbf{x}} \mathbf{y^T Ax} = \mathbf{y^T A}$$.
 
 This should cover the basics of vector calculus! During the first week of the course, we will spend some more time on time 
 on this and you will receive an excellent document written by two other TAs. If you understand these basics, you are well 
