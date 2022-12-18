@@ -158,7 +158,7 @@ to say, the outcomes of these events do not affect each other, and hence $$S$$ a
 assume for a moment I found someone crazy enough to follow me around my entire life, making sure to light some fireworks 
 if and only if either the first strawberry I eat on a given day is sweet or the first coffee I drink is an espresso 
 (or both), denoted with $$F$$. Even though $$\mathbb{P}(S=1 \mid E=0) = \mathbb{P}(S=1)$$, if I now also observe that $$C=1$$, 
-we have that $$\mathbb{P}(S=1 \mid E=0, C=1) \neq \mathbb{P}(S=1 \mid C=1)$$, because since the fireworks were lit, I 
+we have that $$\mathbb{P}(S=1 \mid E=0, F=1) \neq \mathbb{P}(S=1 \mid F=1)$$, because since the fireworks were lit, I 
 know that I did not have an espresso must mean that I had a sweet strawberry. So in this way, magically there is an 
 information stream between my strawberries and coffee! This all is to show that statistics is pretty tricky, and that 
 being imprecise about which variables we assume to be (conditionally) independent can remove and create patterns in 
