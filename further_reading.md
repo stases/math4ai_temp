@@ -9,13 +9,13 @@ nav_order: 4
 
 ### Linear algebra
 
-- Essence of linear algebra - 3blue1brown
-- Linear algebra done right - X
+- Essence of linear algebra - 3Blue1Brown
+- Linear algebra done right - Sheldon Axler
 
 ### Multivariate Calculus
 
-- Essence of calculus - 3blue1brown
+- Essence of calculus - 3Blue1Brown
 
 ### Statistics
 
-- Probabilistic graphical models (esp. part 1) - Daphne Kollner (check)
+- Probabilistic graphical models - Daphne Koller and Nir Friedman
