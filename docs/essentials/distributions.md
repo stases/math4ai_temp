@@ -2,7 +2,7 @@
 layout: default
 parent: Statistics
 grand_parent: Essentials
-nav_order: 2
+nav_order: 3
 title: Distributions
 ---
 

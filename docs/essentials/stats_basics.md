@@ -3,11 +3,11 @@ layout: default
 parent: Statistics
 grand_parent: Essentials
 nav_order: 1
-title: Probability, dependence, and information
+title: Basic probability theory
 ---
 
-# Probability, dependence, and information
-## Random variables and probabilities
+# Basic probability theory
+## Basics: Random variables and probabilities
 
 
 In statistics, we will be working with a special type of mathematics that is able to handle uncertainty of events. 
@@ -29,7 +29,16 @@ great academic after reading this site. It turns out that this second interpreta
 useful in deep learning, even though this exact question is a large philosophical debate called 'frequentist versus 
 Bayesian interpretation of probability'. 
 
-## Conditional probabilities, dependence, and information
+## Basics: Distributions
+
+**Add something about pmf/pdf/distribution/joint.**
+
+Besides standard probabilities, there are two types of probabilities that are of the utmost importance when doing
+probability theory: **conditional and marginal probabilities**. We will introduce these probabilities intuitively here,
+and show you how to calculate them in general in the next section.
+
+
+## Conditional probabilities: Intuition
 
 
 Random variables can describe any stochastic process, or 'experiment'. Suppose $$R$$ still denotes the rating given by a person on a 5-star scale, 
@@ -37,29 +46,20 @@ and let $$H$$ denote a random variable describing 'whether a person is happy'. I
 probability that the customer is unhappy, and $$\mathbb{P}(H=1)$$ denotes the probability that the customer is happy. 
 In this case, we assume that the customer is either happy or unhappy, so there is no third option. 
 
-Suppose we consider our new customer, and we have no idea what rating they will give of how happy they are beforehand. For example given
+Suppose we consider our new customer, and we have no idea what rating they will give or how happy they are beforehand. For example given
 variable $$H$$, for us $$\mathbb{P}(H=0) = \mathbb{P}(H=1)$$, or our belief that the customer is happy is as large as that 
 the customer is unhappy. Let us now assume the user rates our movie with five stars, e.g. we observe that $$R=5$$. Intuitively, 
-my belief that $$H=1$$ now increases, let us say to $$0.9$$. We say that the probability that $$H=1$$ given that $$R=5$$ is $$0.9$$, 
-written as $$\mathbb{P}(H=1 \mid R=5) = 0.9$$. As a consequence, we have also that $$\mathbb{P}(H=0 \mid R=5) = 0.1$$. The 
-astute under you may observe that this again defines a distribution over $$H$$, the distribution denoted as $$H \mid R=5$$. 
-We call this the **conditional distribution**, and we call its probabilities **conditional probabilities**. 
+my belief that $$H=1$$ now increases, let us say to $$0.9$$. This is because in general a high rating is associated
+with being happy with the service, and similarly a low rating is associated with being unhappy with the service. Formally,
+we say that the probability that $$H=1$$ **given** that $$R=5$$ is $$0.9$$, 
+written as $$\mathbb{P}(H=1 \mid R=5) = 0.9$$. 
+As a consequence, we have also that $$\mathbb{P}(H=0 \mid R=5) = 0.1$$. We call this type of probability a **conditional
+probability**, since we again consider the probability of $$H$$ but now using our extra information we have about $$R$$.
+As you may have noticed, this again defined a distribution over $$H$$, which we denote as $$H \mid R=5$$. 
 
-More formally, we can understand the conditional probability as follows. Suppose we have random variables $$X$$ and $$Y$$, 
-and we denote the probability that $$X=x$$ and $$Y=y$$ as $$\mathbb{P}(X=x, Y=y)$$. Intuitively, you can consider the probability 
-that $$X=x$$ and $$Y=y$$ as just the probability that $$X=x$$ and that $$Y=y$$ given that $$X=x$$, i.e.
 
-$$\mathbb{P}(X=x, Y=y) = \mathbb{P}(X=x) \cdot \mathbb{P}(Y=y \mid X=x).$$
+## Conditional probabilities: Independence
 
-And similarly, we have that
-
-$$\mathbb{P}(X=x, Y=y) = \mathbb{P}(Y=y) \cdot \mathbb{P}(X=x \mid Y=y).$$
-
-Therefore, we can define 
-
-$$\mathbb{P}(X=x \mid Y=y) = \frac{\mathbb{P}(X=x, Y=y)}{\mathbb{P}(Y=y)},$$
-
-given that $$\mathbb{P}(Y=y) \neq 0$$.
 
 Suppose I now introduce yet another variable, $$B$$ which denotes whether the user has blue eyes, again taking on values $$1$$ 
 and $$0$$ denoting whether or not the user has blue eyes respectively. In this case, there is no reason to assume that my
@@ -72,56 +72,12 @@ where there is information about $$H$$ in $$R$$. When there is no information ab
 
 $$\mathbb{P}(X=x \mid Y=y) = \mathbb{P}(X=x)$$ 
 
-for whatever values $$x$$ and $$y$$, we say that $$X$$ and $$Y$$ are independent. You may also have encountered this as
+for whatever values $$x$$ and $$y$$, we say that $$X$$ and $$Y$$ are **independent**. You may also have encountered this as
 
 $$\mathbb{P}(X=x, Y=y)  = \mathbb{P}(X=x) \cdot \mathbb{P}(Y=y),$$
 
 which is exactly the same thing when multiplied by $$\mathbb{P}(Y=y)$$ and making using of the fact that 
 $$\mathbb{P}(X=x, Y=y) = \mathbb{P}(Y=y) \cdot \mathbb{P}(X=x \mid Y=y).$$
-
-
-## Important rules of probability
-
-
-In the last section we saw that we can take a joint probability $$\mathbb{P}(X=x, Y=y)$$ and write it as 
-$$\mathbb{P}(X=x) \cdot \mathbb{P}(Y=y \mid X=x)$$.
-
-
-This is called the **chain rule** of probability theory, and this generalizes. For example:
-
-$$\mathbb{P}(X=x, Y=y, Z=z) = \mathbb{P}(X=x) \cdot \mathbb{P}(Y=y, Z=z \mid X=x)$$
-
-and thus
-
-$$\mathbb{P}(X=x, Y=y, Z=z) = \mathbb{P}(X=x) \cdot \mathbb{P}(Y=y \mid X=x) \cdot \mathbb{P}(Z=z \mid X=x, Y=y).$$
-
-At this point, it becomes a bit convoluted to write $$X=x$$ every time, so we might right this also as
-
-$$\mathbb{P}(X, Y, Z) = \mathbb{P}(X) \cdot \mathbb{P}(Y \mid X) \cdot \mathbb{P}(Z \mid X, Y)$$
-
-to exactly mean the same thing. In its most general glory, it would say that
-
-$$\boxed{\mathbb{P}(X_1, \cdots, X_n) = \prod_{k=1}^n \mathbb{P}(X_k \mid X_1, \cdots, X_{k-1})}$$
-
-
-Another very important fact of probability theory is 'marginalization'. It says that if we have two random variables $$X$$ 
-and $$Y$$, we can understand $$\mathbb{P}(X=x)$$ also as a 'summed out' version join probabilities with $$Y$$, i.e.
-
-$$\boxed{\mathbb{P}(X=x) = \sum_{y} \mathbb{P}(X=x, Y=y)}$$ 
-
-Here, we say that $$\mathbb{P}(X)$$ is a **marginal distribution.** This intuitively makes sense: the probability of $$X$$ 
-happening is just the combined probability of it happening in all possible different scenarios. 
-
-Last, but certainly not least, is something else we saw earlier. We observed that $$\mathbb{P}(X, Y) = \mathbb{P}(X) \cdot \mathbb{P}(Y \mid X)$$ 
-and also $$\mathbb{P}(X, Y) = \mathbb{P}(Y) \cdot \mathbb{P}(X \mid Y)$$. It is not hard to see that
-
-$$\boxed{\mathbb{P}(X \mid Y) = \frac{\mathbb{P}(Y \mid X) \cdot \mathbb{P}(X)}{\mathbb{P}(Y)}}$$ 
-
-This is called **Bayes' rule** and gives us a very nice way to 'swap' the variables in a conditional distribution. 
-
-All these rules hold in general and are super important ones, so keep them in your back pocket. 
-
-## Conditional Independence
 
 
 In a real-life situation, simple independence is almost something you never encounter. A much more common scenario is 
@@ -167,3 +123,7 @@ information stream between my strawberries and coffee! So, if you have two varia
 'fake' dependencies by conditioning them external variables. This all is to show that statistics is pretty tricky, and that 
 being imprecise about which variables we assume to be (conditionally) independent can remove and create patterns in 
 our observations that are unexpected.
+
+## Marginal probabilities
+
+**Add**
