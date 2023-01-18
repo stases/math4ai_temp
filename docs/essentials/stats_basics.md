@@ -9,121 +9,94 @@ title: Basic probability theory
 # Basic probability theory
 ## Basics: Random variables and probabilities
 
-
-In statistics, we will be working with a special type of mathematics that is able to handle uncertainty of events. 
-The main object of interest for us is the random variable. Suppose we have a streaming site, and our variable 
-of interest represents the rating some user will give for our new movie, denoted $$R$$. We assume the user can rate the 
-movie on a $$5$$ star scale, i.e. they can give it exactly $$5$$ different values. Because we do not yet know the rating $$R$$,
-its outcome is uncertain for us. To quantify this uncertainty, we use probabilities. We call $$R$$ a **random variable**.
+In order to study machine learning well, we need to develop a mathematical language to deal with collecting, analysing,
+and interpreting data. This is what we commonly understand to be 'statistics', with is our major topic of study in this
+section. However, before we can deep dive into statistics we need to study the mathematical foundations of statistics 
+briefly. Most importantly, we need to look a probability theory, which is what we will do in this section!
 
 
-To use random variables, we need a little bit of probability theory. You might intuitively understand the probability 
+Probability theory is a special type of mathematics that is able to handle uncertainty of events. Even though this area
+of mathematics is very, very vast, we will mainly focus on what very useful object in probability theory: the random variable. 
+Suppose we have a streaming site, and our event of interest we want to represent is the rating some user will give for a new movie 
+just uploaded to the site. Let us denote this variable as $$R$$ for rating. We assume the user can rate the 
+movie on a $$5$$ star scale, i.e. they can give it exactly $$5$$ different values. For example, we can understand
+$$R=1$$ as the situation that the rating given is one star, et cetera. Because we do not yet know what the rating $$R$$ is
+beforehand, its outcome is uncertain for us. To **quantify** this uncertainty, we use probabilities. We call $$R$$ a **random variable**.
+
+
+What does it mean for the probability of some event to be $$\frac{1}{6}$$? You might intuitively understand the probability 
 of a die (that is, half a pair of dice) ending up on a face with $$4$$ dots as $$\frac{1}{6}$$, because if you would roll
 that die a certain number of times, you would expect it landed on a $$4$$ roughly a $$\frac{1}{6}$$th of the times. That is, a 
-probability tells you how **frequently** some event occurs. Even though this intuition is nice when first learning about 
+probability would tell you how **frequently** some event occurs. Even though this intuition is nice when first learning about 
 probabilities, this understanding of probabilities is quite restrictive. For instance, when we are interested in the 
 probability of you becoming a great academic, there is no way to interpret that probability as a frequency. But still, 
-if one says that the probability of you becoming a great academic is $$85\%$$ instead of $$15\%$$ after studying this site 
+if one says that the probability of you becoming a great academic is $$\frac{5}{6}$$ instead of $$\frac{1}{6}$$ after studying this site 
 (sadly not an actual statistic), that does tell you something about my **degree of belief** in you becoming a 
 great academic after reading this site. It turns out that this second interpretation of probability theory is more 
 useful in deep learning, even though this exact question is a large philosophical debate called 'frequentist versus 
 Bayesian interpretation of probability'. 
 
-## Basics: Distributions
+For now, there are two properties that are very important when considering a random variable. If we consider the set of 
+all outcomes, we assume that 
 
-**Add something about pmf/pdf/distribution/joint.**
-
-Besides standard probabilities, there are two types of probabilities that are of the utmost importance when doing
-probability theory: **conditional and marginal probabilities**. We will introduce these probabilities intuitively here,
-and show you how to calculate them in general in the next section.
+1. The probability of each outcome lies somewhere in the interval $$[0, 1]$$, that is each probability is at least $$0.0$$ and at most $$1.0$$.
+2. If we sum over the probabilities all the outcomes, the total should add up to be exactly $$1$$.
 
 
-## Conditional probabilities: Intuition
+
+For examples, suppose we are optimistic and assign a probability of $$0.6$$ to the rating of the user being 5 stars, and assign a 
+probability of $$0.1$$ to all other outcomes, this would define a valid random variable. We call the function that
+assign the probability to each outcome a **probability mass function** (or: pmf). Often, we write $$f_R$$ or $$p_R$$ for
+the pmf of random variable $$R$$, so in this case $$f_R(5) = 0.6$$.
+
+Often, we denote 'the probability' with the symbol $$\mathbb{P}$$, and denote the set of all outcomes as $$\Omega$$. Hence,
+for some random variable $$X$$ the above lines can be formalized as
+
+1. $$\mathbb{P}(X=x) = f_X(x) \in [0, 1]$$ for all $$x \in \Omega$$;
+2. $$\sum_{x \in \Omega} \mathbb{P}(X=x) =\sum_{x \in \Omega} f_X(x) = 1$$.
+
+There is one subtlety: if the outcomes do not come from a discrete set but rather from a continuous set, we need a slightly 
+more exotic object. In short,
+if we would again assign a probability greater than $$0$$ to any outcome, the fact that are are so many outcomes will
+imply that the total integral (the continuous counterpart of a sum) will not be equal to $$1$$. One solution for this
+is to rather of intervals of outcomes. Suppose the outcomes of our event $$X$$ are the entire number line, and $$f_X$$
+is some function over this interval (if you want, picture a normal distribution if you are familiar with this already).
+We demand that the total area underneath this curve is again $$1$$, i.e. that
+
+$$\int_{- \infty}^{\infty} f_X(x) dx = 1.$$
+
+When associating the area with probability, we can now also ask that the probability is that $$\mathbb{P}(X \geq 0)$$ by
+just integrating over all outcome greater than zero or equal to:
+
+$$\mathbb{P}(X \geq 0) = \int_{0}^{\infty} f_X(x) dx.$$
+
+In the continuous case, we call this function $$f_X$$ a **probability density function** (or: pdf), rather than a pmf. 
 
 
-Random variables can describe any stochastic process, or 'experiment'. Suppose $$R$$ still denotes the rating given by a person on a 5-star scale, 
-and let $$H$$ denote a random variable describing 'whether a person is happy'. In this case, $$\mathbb{P}(H=0)$$ denotes the 
+## Basics: Distributions and queries
+
+In general, we might be interested in multiple variables. Suppose we also care about a new random variable with denotes
+'whether a person is happy'. In this case, $$\mathbb{P}(H=0)$$ denotes the 
 probability that the customer is unhappy, and $$\mathbb{P}(H=1)$$ denotes the probability that the customer is happy. 
-In this case, we assume that the customer is either happy or unhappy, so there is no third option. 
+In this case, we assume that the customer is either happy or unhappy, so there is no third option. This now gives us
+a lot of different outcomes already, since we could in theory have a probability for the combination of outcomes and 
+happiness scores, giving a total of $$5 \times 2 = 10$$ different probabilities. The notation does not change much, e.g.
+if we consider the probability that someone give a five star rating and is happy to be $$0.5$$, we write $$\mathbb{P}(R=5, H=1) = 0.5$$.
+We call a distribution over multiple random variables a **joint distribution**.
 
-Suppose we consider our new customer, and we have no idea what rating they will give or how happy they are beforehand. For example given
-variable $$H$$, for us $$\mathbb{P}(H=0) = \mathbb{P}(H=1)$$, or our belief that the customer is happy is as large as that 
-the customer is unhappy. Let us now assume the user rates our movie with five stars, e.g. we observe that $$R=5$$. Intuitively, 
-my belief that $$H=1$$ now increases, let us say to $$0.9$$. This is because in general a high rating is associated
-with being happy with the service, and similarly a low rating is associated with being unhappy with the service. Formally,
-we say that the probability that $$H=1$$ **given** that $$R=5$$ is $$0.9$$, 
-written as $$\mathbb{P}(H=1 \mid R=5) = 0.9$$. 
-As a consequence, we have also that $$\mathbb{P}(H=0 \mid R=5) = 0.1$$. We call this type of probability a **conditional
-probability**, since we again consider the probability of $$H$$ but now using our extra information we have about $$R$$.
-As you may have noticed, this again defined a distribution over $$H$$, which we denote as $$H \mid R=5$$. 
+Now, we might ask either of the following two things: 1) what if I do not care about the specific rating of a user, but rather care whether or not their happy?  
+And: 2) how do I find the probability that someone will rate a move five stars if I know they are unhappy? These questions about
+our variables of interest, sometimes called **queries**, we can all answer using the joint distribution. Actually,
+in general we can get to know whatever we want about our variables if we are able to specify the joint. 
 
+In general, we differentiate two different questions:
 
-## Conditional probabilities: Independence
+1. **Marginal probabilities.** In this case, we are interested in the outcomes of a strict subset of out variables. The
+first question in the previous section is an example of such a query. Formally, we ask how to get from $$\mathbb{P}(X_1, \cdots, X_n)$$ 
+to $$\mathbb{P}(X_i)$$. 
+2. **Conditional probabilities.** In this case, we are interested in the outcome of some of our variables if we already
+know the outcome of the rest. This query corresponds to the second question in the previous section. We denote the probability
+of $$X=x$$ given the outcome that $$Y=y$ as $$\mathbb{P}(X=x \mid Y=y).$$
 
+In the next section, we will look into how to calculate these probabilities.
 
-Suppose I now introduce yet another variable, $$B$$ which denotes whether the user has blue eyes, again taking on values $$1$$ 
-and $$0$$ denoting whether or not the user has blue eyes respectively. In this case, there is no reason to assume that my
-belief that someone is happy changes after observing whether or not someone has blue eyes, i.e.
-
-$$\mathbb{P}(H=1 \mid B=1) = \mathbb{P}(H=1).$$
-
-Without defining these notions formally here, you can convince yourself that there is no **information** about $$H$$ in $$B$$, 
-where there is information about $$H$$ in $$R$$. When there is no information about $$X$$ in $$Y$$, or when 
-
-$$\mathbb{P}(X=x \mid Y=y) = \mathbb{P}(X=x)$$ 
-
-for whatever values $$x$$ and $$y$$, we say that $$X$$ and $$Y$$ are **independent**. You may also have encountered this as
-
-$$\mathbb{P}(X=x, Y=y)  = \mathbb{P}(X=x) \cdot \mathbb{P}(Y=y),$$
-
-which is exactly the same thing when multiplied by $$\mathbb{P}(Y=y)$$ and making using of the fact that 
-$$\mathbb{P}(X=x, Y=y) = \mathbb{P}(Y=y) \cdot \mathbb{P}(X=x \mid Y=y).$$
-
-
-In a real-life situation, simple independence is almost something you never encounter. A much more common scenario is 
-that of two random variables being independent _given_ some third variable. Suppose we consider two students that both 
-travel by the same train to the university, and we denote $$S_1$$ as the binary variable describing whether student $$1$$ 
-is on time for the lecture, and $$S_2$$ the binary variable describing whether student $$2$$ is on time. Intuitively, these 
-events are related, since when you tell me that $$S_1$$ is on time, that increased my belief that $$S_2$$ also is on time, 
-for the reason that the trains were not delayed. In other words,
-
-$$\mathbb{P}(S_2 = 1 \mid S_1 = 1) > \mathbb{P}(S_2 = 1).$$ 
-
-Therefore, we observe that $$S_1$$ and $$S_2$$ are **not independent**.
-
-However, let us now introduce yet a third variable $$T$$ denoting whether the train was on time. By a similar argument, we have that 
-
-$$\mathbb{P}(S_2 = 1 \mid T = 1) > \mathbb{P}(S_2 = 1),$$ 
-
-since again telling me that the train was on time increases my belief 
-that student 2 is on time. However, suppose now that I already know that the train is on time. Does my observing that $$S_1$$ is 
-or is not on time still tell me something new? In this case no, because the only thing it could tell me is something about 
-whether or not the train is delayed, and since we already knew that the train was not delayed we obtain no information. 
-In this case, we have that actually that for all situations $$s_1, s_2, t$$, we intuitively find that
-
-$$\mathbb{P}(S_2 = s_2 \mid T = t, S_1 = s_1) = \mathbb{P}(S_2 = s_2 \mid T = t).$$
-
-In this case, we say that $$S_2$$ is **conditionally independent** of $$S_1$$ given $$T$$. 
-In other words, we say that $$X$$ is conditionally independent of $$Y$$ given $$Z$$, if my belief in $$X$$ is not affected by the 
-outcome of $$Y$$ if I already know that $$Z$$. Please take you time to absorb this, this is arguably the most important
-notion introduced in this section.
-
-In the case above, we had a situation where $$X$$ and $$Y$$ were dependent, but $$X$$ and $$Y$$ were independent given some $$Z$$. 
-I.e., even if there is an 'information flow' between $$X$$ and $$Y$$, there can be no 'information flow' from $$X$$ to $$Y$$ if 
-we know that $$Z$$. Actually, the other case is also possible, the situation where $$X$$ and $$Y$$ are independent variables, 
-but they become dependent given some variable $$Z$$. For example, suppose that $$S$$ denotes whether or not the first 
-strawberry I eat on a day is sweet, and $$E$$ denotes whether or not the first coffee I prepare is an espresso. Needless 
-to say, the outcomes of these events do not affect each other, and hence $$S$$ and $$E$$ are independent. However, 
-assume for a moment I found someone crazy enough to follow me around my entire life, making sure to light some fireworks 
-if either the first strawberry I eat on a given day is sweet or the first coffee I drink is an espresso 
-(or both), denoted with $$F$$. Even though $$\mathbb{P}(S=1 \mid E=0) = \mathbb{P}(S=1)$$, if I now also observe that $$C=1$$, 
-we have that $$\mathbb{P}(S=1 \mid E=0, F=1) \neq \mathbb{P}(S=1 \mid F=1)$$, because since the fireworks were lit, I 
-know that since I did not have an espresso, it must mean that I had a sweet strawberry. So in this way, magically there is an 
-information stream between my strawberries and coffee! So, if you have two variables that are independent, we can create
-'fake' dependencies by conditioning them external variables. This all is to show that statistics is pretty tricky, and that 
-being imprecise about which variables we assume to be (conditionally) independent can remove and create patterns in 
-our observations that are unexpected.
-
-## Marginal probabilities
-
-**Add**
