@@ -96,7 +96,6 @@ first question in the previous section is an example of such a query. Formally, 
 to $$\mathbb{P}(X_i)$$. 
 2. **Conditional probabilities.** In this case, we are interested in the outcome of some of our variables if we already
 know the outcome of the rest. This query corresponds to the second question in the previous section. We denote the probability
-of $$X=x$$ given the outcome that $$Y=y$ as $$\mathbb{P}(X=x \mid Y=y).$$
-
-In the next section, we will look into how to calculate these probabilities.
+of $$X=x$$ given the outcome that $$Y=y$$ as $$\mathbb{P}(X=x \mid Y=y),$$ but this notation will be made formal in the
+next section where we also study how to calculate these probabilities.
 
