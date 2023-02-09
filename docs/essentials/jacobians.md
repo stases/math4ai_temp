@@ -107,13 +107,15 @@ us from the fact that we did just find our new identity though, that is:
 
 $$\frac{d}{d\textbf{x}} \mathbf{a^Tx} = \mathbf{a^T}.$$
 
-Now it is your turn, please try and verify that $$\frac{d}{d\textbf{x}} \mathbf{y^T A x} = \mathbf{y^TA},$$ where 
+
+{: .exercise }
+Your turn! Try and verify that $$\frac{d}{d\textbf{x}} \mathbf{y^T  A x} = \mathbf{y^T A},$$ where 
 $$\textbf{x} \in \mathbb{R}^m$$, $$\mathbf{A} \in \mathbb{R}^{n \times m}$$, and $$\textbf{y} \in \mathbb{R}^m$$. Please do 
 this 1) using index notation, and 2) using our identity friends we have already found. 
 
 
-We know that $$\mathbf{y^TAx}$$ is a scalar (why?), and hence the Jacobian will be again of the form $$(1 \times m)$$ if 
-$$\textbf{x}$$ is a $$m$$-dimensional vector. Using index notation, we aim to find $$\frac{d}{dx_i} \mathbf{y^TAx}$$. We observe that
+We know that $$\mathbf{y^T Ax}$$ is a scalar (why?), and hence the Jacobian will be again of the form $$(1 \times m)$$ if 
+$$\textbf{x}$$ is a $$m$$-dimensional vector. Using index notation, we aim to find $$\frac{d}{dx_i} \mathbf{y^T Ax}$$. We observe that
 
 $$\frac{d}{dx_i} \mathbf{y^T A x} = \frac{d}{dx_i} \sum_{k=1}^n \sum_{j=1}^m y_{k}A_{kj}x_j = \sum_{k=1}^n \sum_{j=1}^m \frac{d}{dx_i} y_{k}A_{kj}x_j.$$
 

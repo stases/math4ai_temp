@@ -6,6 +6,10 @@ nav_order: 2
 title: Univariate Derivatives
 ---
 
+{: .content }
+In this section you will study derivative of regular functions $$f: \mathbb{R} \to \mathbb{R}$$. This section will serve
+as the basis for more the more complex derivatives of functions $$f: \mathbb{R}^n \to \mathbb{R}^m$$.
+
 # Univariate Derivatives
 
 
@@ -49,3 +53,7 @@ where we substituted $$u = \sin (x)$$ in the last step. So, we **sum** all the p
 is the influence of $$x$$ on $$u$$ times the influence of $$u$$ on $$y$$.
 
 [^1]: If you are not familiar with the $$\exp(x)$$ function, it is just another way to write $$e^x$$.
+
+{: .summary }
+In this section, you have seen: a graphical visualisation of functions and derivatives, the chain rule of differentiation,
+and the sum rule of differentiation.
