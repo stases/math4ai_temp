@@ -1,10 +1,3 @@
----
-layout: default
-parent: Multivariate Calculus
-grand_parent: Essentials
-nav_order: 1
-title: Introduction
----
 
 # Introduction to multivariate calculus
 

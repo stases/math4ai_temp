@@ -6,6 +6,10 @@ nav_order: 4
 title: Jacobians
 ---
 
+{: .content }
+In this section you will look at general patterns in higher-dimensional derivatives.
+
+
 # Jacobians
 
 ## A new fried: Kronecker delta
@@ -138,3 +142,6 @@ $$\frac{d}{d\textbf{x}} \mathbf{v^T x} = \mathbf{v^T}$$, and hence we know that 
 This should cover the basics of vector calculus! During the first week of the course, we will spend some more time on time 
 on this and you will receive an excellent document written by two other TAs. If you understand these basics, you are well 
 on your way to doing machine learning soon enough! 
+
+{: .summary }
+In this section you have seen the Kronecker delta and a general strategy to finding multi-variate derivatives.

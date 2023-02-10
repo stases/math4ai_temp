@@ -7,8 +7,8 @@ title: Univariate Derivatives
 ---
 
 {: .content }
-In this section you will study derivative of regular functions $$f: \mathbb{R} \to \mathbb{R}$$. This section will serve
-as the basis for more the more complex derivatives of functions $$f: \mathbb{R}^n \to \mathbb{R}^m$$.
+In this section you will study derivatives of regular functions $$f: \mathbb{R} \to \mathbb{R}$$. This section will serve
+as the basis for more the more complex derivatives of functions $$f: \mathbb{R}^m \to \mathbb{R}^n$$.
 
 # Univariate Derivatives
 
@@ -16,7 +16,7 @@ as the basis for more the more complex derivatives of functions $$f: \mathbb{R}^
 Let us start nice and easy with our basic functions over the reals, i.e. functions $$f: \mathbb{R} \to \mathbb{R}$$. 
 Though this initially may look superfluous, we will introduce a visual way of representing these functions. This new 
 approach will make it easier to consider multivariate functions and is commonplace in machine learning. Consider the 
-function $$f$$ such that $$f: x \mapsto x^2$$, i.e. the functions that squares its input. Again, our output is given by 
+function $$f$$ such that $$f: x \mapsto x^2$$, i.e. the function that squares its input. Again, our output is given by 
 $$y = f(x) = x^2$$. In our example, we can visualize this function as follows: 
 
 **add**
@@ -51,6 +51,30 @@ $$\frac{dy}{dx} = \frac{dy}{du} \frac{du}{dx} = \exp(u) \cdot \cos (x) = \exp (\
 where we substituted $$u = \sin (x)$$ in the last step. So, we **sum** all the paths from $$x$$ to $$y$$, and we
 **multiply** the intermediate effects, e.g. if $$x$$ influences $$u$$ which influences $$y$$, the influence of $$x$$ on $$y$$ 
 is the influence of $$x$$ on $$u$$ times the influence of $$u$$ on $$y$$.
+
+
+{: .exercise }
+Let $$f: \mathbb{R} \to \mathbb{R}$$ be the function defined by $$f: x \mapsto \sqrt{\tan (x^2)}$$. Draw the diagram corresponding
+to this function and find $$\frac{df}{dx}$$. 
+
+The corresponding diagram for this function is: 
+
+**Add**
+
+Here, we defined $$u := x^2$$, $$v:= \tan u$$, and $$y := \sqrt{v}$$. The effect of $$x$$ on $$f$$ is given by the effect of $$x$$ on $$u$$ times
+the effect of $$u$$ on $$v$$ times the effect of $$v$$ on $$y$$, i.e.
+$$\frac{df}{dx} = \frac{dy}{dv} \frac{dv}{du} \frac{du}{dx}.$$
+
+Using basic derivative techniques, we therefore conclude that 
+
+$$\frac{df}{dx} = \frac{1}{2 \sqrt{v}} \cdot \frac{1}{\cos^2 u} \cdot 2 x.$$
+
+Using our substitutions, we can write this as 
+
+$$\frac{df}{dx} = \frac{1}{2 \sqrt{\tan (x^2)}} \cdot \frac{1}{\cos^2 (x^2)} \cdot 2 x = \frac{1}{\cos^2(x^2) \sqrt{\tan (x^2)}}.$$
+
+
+
 
 [^1]: If you are not familiar with the $$\exp(x)$$ function, it is just another way to write $$e^x$$.
 

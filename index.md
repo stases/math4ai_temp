@@ -9,7 +9,6 @@ nav_order: 1
 Welcome to the Math4AI site associated with the MSc in Artificial Intelligence from the University of Amsterdam.
 This site is provided to help you familiarize yourself with the mathematics needed to become proficient in machine learning.
 
-
 ## Essentials
 
 This section is divided into three parts:

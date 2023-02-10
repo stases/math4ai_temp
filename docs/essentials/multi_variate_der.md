@@ -5,7 +5,9 @@ grand_parent: Essentials
 nav_order: 3
 title: Multivariate Derivatives
 ---
-
+{: .content }
+In this section you will study derivatives of functions $$f: \mathbb{R}^m \to \mathbb{R}^n$$ using the graphical
+representation introduced in the previous section.
 # Multivariate Derivatives
 
 
@@ -84,9 +86,11 @@ $$\frac{d y}{dx} = \frac{dy}{du} \frac{du}{dx} + \frac{dy}{dv} \frac{dv}{dx} = v
 
 You may recognize this as the product rule, now you know where that comes from!
 
-Finishing up, we go over one big example. Suppose $$\textbf{f}: \mathbb{R}^3 \to \mathbb{R}^3$$ such that 
+
+{: .exercise }
+Suppose $$\textbf{f}: \mathbb{R}^3 \to \mathbb{R}^3$$ such that 
 $$f(x_1, x_2, x_3) = \textbf{h}(\textbf{g}(x_1, x_2, x_3))$$, where $$\textbf{g}(x_1, x_2, x_3) = (x_1^2x_2^2, \sqrt{x_2x_3})$$ 
-and $$\textbf{h}(u, v) = (u^2, uv, v^2)$$. Try it for yourself! Find $$\frac{\partial y_2}{\partial x_2}$$. Hint: draw out what happens.
+and $$\textbf{h}(u, v) = (u^2, uv, v^2)$$. Find $$\frac{\partial y_2}{\partial x_2}$$. Hint: draw out what happens.
 
 When visualizing this function, we get the following:
 
@@ -105,5 +109,8 @@ Sweet! We now know how to find derivatives in multivariate functions. As you hav
 and sometimes (especially in deep learning) it is not necessary to write out everything by hand like this. 
 This will be the topic of the rest of this section.
 
+
+{: .summary }
+In this section, you have seen: how to generalise the previous section to functions with multiple inputs and outputs.
 
 [^1]: For pedagogical reasons, we will call all such higher-order derivatives of $y$ Jacobians and denote them with $$\frac{d\textbf{y}}{d\textbf{x}}$$, but in practice, most people will just use the word 'gradient' here anyway.
