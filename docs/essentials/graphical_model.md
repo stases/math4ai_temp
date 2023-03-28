@@ -2,11 +2,15 @@
 layout: default
 parent: Statistics
 grand_parent: Essentials
-nav_order: 4
+nav_order: 3.5
 title: Graphical Models
 ---
 
-# Graphical Models
+{: .content }
+In this section you will learn how to use independence to parametrize joints over many variables efficiently using graphical models
+
+# Graphical models
+
 
 ## Motivation
 
