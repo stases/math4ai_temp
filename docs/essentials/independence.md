@@ -38,6 +38,12 @@ which is exactly the same thing when multiplied by $$\mathbb{P}(Y)$$ and making 
 $$\mathbb{P}(X, Y) = \mathbb{P}(Y) \cdot \mathbb{P}(X \mid Y).$$ When $$X$$ and $$Y$$ are not independent, i.e.
 when $$X$$ tell me something about $$Y$$, we call them **dependent**. 
 
+{: .exercise }
+Suppose we want to parametrize a joint over 10 binary random variables, $$X_1, \cdots, X_{10}$$. If we do not assume any independence,
+we would need $$2^{10} - 1 = 1023$$ parameters to describe this joint. Suppose now that all $$X_i$$ are independent, i.e.
+that $$\mathbb{P}(X_1, \cdots, X_{10}) = \prod_{i=1}^{10} \mathbb{P}(X_i)$$. Explain why now we only need $$10$$ parameters
+to describe our joint.
+
 ## Conditional Independence
 
 In a real-life situation, simple independence is almost something you never encounter. A much more common scenario is 

@@ -96,7 +96,12 @@ In this case, we assume that the customer is either happy or unhappy, so there i
 a lot of different outcomes if we want to model both $$H$$ and $$R$$ simultaneously, since we could in theory have a probability for the combination of outcomes and 
 happiness scores, giving a total of $$5 \times 2 = 10$$ different probabilities. The notation does not change much, e.g.
 if we consider the probability that someone give a five star rating and is happy to be $$0.5$$, we write $$\mathbb{P}(R=5, H=1) = 0.5$$.
-We call a distribution over multiple random variables a **joint distribution**.
+We call a distribution over multiple random variables a **joint distribution**. 
+
+
+{: .exercise }
+Suppose we have random variables $$X_1, \cdots, X_n$$ with possible outcomes $$\Omega_1, \cdots, \Omega_n$$. Explain why
+in general the joint $$\mathbb{P}(X_1, \cdots, X_n)$$ has $$\prod_{i=1}^n \{ |\Omega_i| \} - 1$$ parameters. What problems could this cause when trying to learn this joint distribution?
 
 The beauty of a joint distribution is that we derive any information we might want to know of the individual random variables it
 describes. For examples, given the joint distribution above, we might ask either of the following two things: 1) what if I do not care about 

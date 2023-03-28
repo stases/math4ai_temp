@@ -75,7 +75,9 @@ This definition makes intuitive sense: my believe in $$X$$ taking on outcome $$x
 of $$X$$ taking on $$x$$ given that $$Y=y$$, weighted by my belief in $$Y=y$$. Here, we say that $$\mathbb{P}(X)$$ is a **marginal probability.**  
 
 
-
+{: .exercise }
+Suppose we have a joint distribution $$\mathbb{P}(X_1, X_2, X_3, X_4)$$, how can we use the above two rules
+to find $$\mathbb{P}(X_1 = 1 \mid X_4=1, X_2 = 0)$$? The answer will be covered in the section on graphical models.
 
 ## Bayes rule
 

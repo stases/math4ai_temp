@@ -11,36 +11,33 @@ In this section you will learn how to use independence to parametrize joints ove
 
 # Graphical models
 
-
-## Motivation
-
+## Why graphical models
 Although this might sound surprising to many, there is actually a lot of statistics we can do without specifying specific 
 distributions over our variables. Our main way to go about that is through using **graphical models** in which we explicitly 
 define our variables and how they relate to each other. This allows us to formulate the (conditional) independence relationships 
-between the variables.
+between the variables. As seen in the previous section, knowing independence relations between the random variables can 
+greatly reduce the number of parameters we need to learn for our joint distributions.
 
-First of all, you might wonder why we would exactly care about these conditional independence relations. Suppose, 
-for the time being, we measure $$4$$ different binary variables, denoted as $$X_1, X_2, X_3$$, and $$Y$$. 
+Getting a bit more machine learning-y, suppose we care about $$4$$ different binary variables, denoted as $$X_1, X_2, X_3$$, and $$Y$$. 
 For example, $$X_1, X_2, X_3$$ could denote 3 different aspects of a house (e.g. $$X_1$$ is many/few rooms, 
 $$X_2$$ is old/new house, and $$X_3$$ one/multiple floors) and $$Y$$ denotes whether it was sold for a high or low price.[^1]
-We can imagine that these $4$ variables define one large joint distribution (of an unknown kind), i.e. for all values 
+We can imagine that these $$4$$ variables define one large joint distribution (of an unknown kind), i.e. for all values 
 $$x_1, x_2, x_3$$, and $$y$$, we could know $$\mathbb{P}(X_1 = x_1, X_2 = x_2, X_3 = x_3, Y=y)$$. It is important to 
 realize that when we have a joint distribution, we can find any marginal or conditional probability of the variable. 
-For example, to find the probability of there being many rooms, given that the house was sold for a high price and the 
-house was old, we can find this:
+For example, to find the probability of the house being expensive, given is has few rooms and one floor, we can find this:
 
-$$\mathbb{P}(X_1 = 1 \mid Y=1, X_2 = 0) = \frac{\mathbb{P}(Y=1, X_1 = 1, X_2 = 0)}{\mathbb{P}(Y=1, X_2 = 0)},$$
+$$\mathbb{P}(Y = 1 \mid X_1=0, X_2 = 0) = \frac{\mathbb{P}(Y=1, X_1 = 0, X_2 = 0)}{\mathbb{P}(X_1=0, X_2 = 0)},$$
 
 which we can evaluate through marginalisation by
 
-$$\mathbb{P}(X_1 = 1 \mid Y=1, X_2 = 0) = \frac{\sum_{x_3} 
- \mathbb{P}(Y=1, X_1 = 1, X_2 = 0, X_3 = x_3)}{\sum_{x_1, x_3} 
- \mathbb{P}(Y=1, X_1 = x_1, X_2 = 0, X_3 = x_3)}.$$
+$$\mathbb{P}(Y = 1 \mid X_1=0, X_2 = 0) = \frac{\sum_{x_3} 
+ \mathbb{P}(Y=1, X_1 = 0, X_2 = 0, X_3=x_3)}{\sum_{y, x_3} 
+ \mathbb{P}(Y=y, X_1 = 0, X_2 = 0, X_3 = x_3)}.$$
 
 
 
-Having the full joint distribution is our ideal case, exactly it allows us to ask these types of questions. In this case, 
-we need to specify $$2^4 = 16$$ different values for each of the combinations of $$X_1, X_2, X_3$$, and $$Y$$.[^2] 
+Having the full joint distribution is our ideal case, exactly because it allows us to ask these types of questions. In this case, 
+we need to specify $$2^4 - 1= 15$$ different values for each of the combinations of $$X_1, X_2, X_3$$, and $$Y$$.
 However, now imagine our variables taking on $$10$$ different values and having $$20$$ different variables. 
 We would have to specify $$10^{20}$$ different values. To put this into perspective, that are more values than there are 
 grains of sand on the planet. 
@@ -74,31 +71,28 @@ drink my espresso, the fireworks will be lit. Similarly, there will be an arrow 
 
 **add**
 
-Now, suppose we make formal what we have written above. Since $$S$$ is not influenced directly by either $$E$$ or $$F$$, we conclude that 
+Now, suppose we make formal what we have written above. For each node in the graph, we can consider its 'parents', which are 
+all other nodes from which there exists a directed edge, i.e. for graph $$\mathcal{G} = (\mathcal{V}, \mathcal{E})$$, we denote
+$$\mathsf{Parents}(v_i) = \{v_j \in \mathcal{V} \mid (v_j, v_i) \in \mathcal{E}).$$ We say that a joint distribution 'follows' the
+bayensian network if the joint composes based on the parental structure in the graph. Suppose we have random variables $$X_1, \cdots, X_n$$,
+and a graph $$\mathcal{G} = (\mathcal{V}, \mathcal{E})$$ where the nodes are the $$X_i$$. Then, if the 
+joint distribution decomposes as such
 
-$$\mathbb{P}(S \mid E, F) = \mathbb{P}(S),$$
+$$\mathbb{P}(X_1, \cdots, X_n) = \prod_{i = 1}^n \mathbb{P}(X_i \mid \mathsf{Parents}(X_i)),$$
 
-and since $$E$$ is not influenced by $$S$$ or $$F$$ directly we know that
+we say that the joint 'decomposes over $$\mathcal{G}$$' and is a Bayesian network. So, in case of breakfast example, we would have that
 
-$$\mathbb{P}(E \mid C, F) = \mathbb{P}(E).$$
+$$\mathbb{P}(S, E, F) = \mathbb{P}(S) \cdot \mathbb{P}(E) \cdot \mathbb{P} (F \mid S, E).$$
 
-Moreover, since $$C$$ is influenced by both $$S$$ and $$E$$, we cannot remove any of the variables there. 
-
-Let us know zoom in on the joint distribution $$\mathbb{P}(S, C, F$)$$. Again, if we can assess this distribution for 
-all values $$s, c, f$$, we can ask all questions we want about it. If we write it out now, we observe by the chain rule that:
-
-$$\mathbb{P}(S, C, F) = \mathbb{P}(S) \cdot \mathbb{P}(C \mid S) \cdot \mathbb{P}(F \mid C, S).$$
-
-So far so good. Now, using our new independence relations, we know we can also write
+{: .exercise }
+Explain why in general the sparser the graph - that is, the fewer edges it has - the more parameter reduction we observe. What does this tell you about the expressivity of the joint?
+Moreover, explain why if we add an edge from $$X$$ to $$Y$$ but $$X$$ does not give information about $$Y$$, we are not in trouble.
+That is, it is OK to have too many edges, but having too few edges could harm us.
 
 
-$$\mathbb{P}(S, C, F) = \mathbb{P}(S) \cdot \mathbb{P}(C) \cdot \mathbb{P}(F \mid C, S),$$
-
-since $$C$$ is independent of $$S$$. 
-
-Let us try one more example. Suppose we have $$5$$ variables, $$X_1$$ up to $$X_5$$. In the naive setting, we would have that 
-$$\mathbb{P}(X_1, \cdots, X_5)$$ needs $$2^5 - 1 = 31$$ values. Suppose now, that the effects are pretty simple, e.g. 
-$$X_1$$ affects only $$X_2$$, $$X_2$$ affects only $$X_3$$, and so on. That is, our graph looks like this:
+Let us try one more example. Suppose we have $$6$$ variables that take on $$15$$ different values, $$Y_1$$ up to $$Y_6$$. In the naive setting, we would have that 
+$$\mathbb{P}(Y_1, \cdots, Y_6)$$ needs $$15^6 - 1 \approx 10^7$$ values. Suppose now, that the effects are pretty simple, e.g. 
+$$X_1$$ affects directly only $$X_2$$, $$X_2$$ affects directly only $$X_3$$, and so on. That is, our graph looks like this:
 
 **add**
 
@@ -106,9 +100,9 @@ Then, we could write our joint as:
 
 $$\mathbb{P}(X_1, \cdots, X_5) = \mathbb{P}(X_1) \cdot \mathbb{P}(X_2 \mid X_1) \cdot \mathbb{P}(X_3 \mid X_2) \cdot \mathbb{P}(X_4 \mid  X_3) \cdot \mathbb{P}(X_5 \mid X_4).$$
 
-In this factorization, we observe that we need $$1$$ parameter for the $$\mathbb{P}(X_1)$$ distribution, and need $$3$$ 
-parameters for each of the $$\mathbb{P}(X_i \mid X_{i-1})$$ distributions, i.e. a total of $$13$$ parameters rather than the 
-$$31$$ we started off with. 
+In this factorization, we observe that we need $$15 - 1 = 14$$ parameters for the $$\mathbb{P}(X_1)$$ distribution, and need $$15 * 15 - 1 = 224$$ 
+parameters for each of the $$\mathbb{P}(X_i \mid X_{i-1})$$ distributions, i.e. a total of $$1134$$ parameters rather than the 
+ten million we started off with. 
 
 
 
