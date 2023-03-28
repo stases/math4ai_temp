@@ -20,12 +20,14 @@ we 'essentials' sections is dedicated to covering the most important topics with
 - [**Statistics**](docs/essentials/statistics), studying how to analyze data, quantify uncertainty, and describe random events.
 
 Each section contains a tl;dr on top and summary at the bottom discussing the highlights of the section, 
-and one important exercise to help you understand the main point of the section.
+and one important exercise to help you understand the main point of the section. Please notice the search bar at the top if 
+you want to quickly look for a topic (e.g. 'marginalization').
 
 
 If you see any errors on this site, please [write us](contact) and we will make sure to address them as soon as possible.
 
 **Floor Eijkelboom & Tin Hadži Veljković**
 
-{: .note }
-This project is under active development.
+[//]: # ({: .note })
+
+[//]: # (This project is under active development.)
