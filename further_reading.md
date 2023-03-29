@@ -6,7 +6,6 @@ nav_order: 5
 
 
 ## Further reading
-
 ### Linear algebra
 
 - Essence of linear algebra - 3Blue1Brown

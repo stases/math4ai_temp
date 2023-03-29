@@ -6,6 +6,10 @@ nav_order: 4
 title: Distributions
 ---
 
+
+{: .content }
+In this section you will learn about common distributions.
+
 # Distributions
 
 
@@ -17,8 +21,8 @@ outcome. For example, our random variable could look something like this:
 **add**
 
 This probability mass function (or: pmf) gives us something we call a distribution, it quite literately tells how the 
-different probability values are distributed over the outcomes of $$X$$. Now, the beauty of the world of statistics is 
-that we can now name different distributions and then classify different random variables as being of the same type of distribution. 
+different probability values are distributed over the outcomes of $$X$$. Now, the beauty of statistics is 
+that we can now classify different random variables as being of the same type of distribution. 
 It so turns out that in the actual world a lot of processes follow only a very select set of distributions. For example, 
 the number of visits on this website per hour, the number of arrivals at the university per minute, and the number of books 
 handed out by the library per day, all follow a so-called _Poisson_ distribution. Similarly, the height of a given person, 
@@ -30,22 +34,30 @@ we can write that $$\mathbb{P}(X=x) = p_{X}(x).$$ Please now take your time to u
 writing $$\mathbb{P}(X=x)$$ and $$p_X(x)$$, where the left-hand side can be considered asking a question the right-hand side answers. 
 
 
+## Case study: Poisson distribution
+
 The distribution we will look at is the Poisson distribution. To specify a Poisson distribution, we need one parameter 
 called the 'rate' of the distribution. We write $$X \sim \mathsf{Pois}(\lambda)$$ to denote that random variable $$X$$ follows 
 a Poisson distribution with parameter $$\lambda$$. Here are some examples of the probability mass function of $$\mathsf{Pois}(\lambda)$$ 
 for different values of $$\lambda$$:
 
+**Add**
+
 The pdf of the Poisson is given by:
 
 $$p_X(x) = \frac{\lambda^x e^{-\lambda}}{x!}.$$
 
-This is pretty neat. If I now know the $$\lambda$$ which describes the distribution of the Poisson I care about for any 
-experiment I care about, I can tell you how likely all the different outcomes of the experiment are. Also, since we have 
-this nice formulation for the pdf, we can prove other stuff such as that the mean of a Poisson is always $$\lambda$$, 
-the mode (i.e. highest value) is always $$\lfloor \lambda \rfloor$$, among other things.[^1]
+{: .exercise }
+Show that this is indeed a pmf, i.e. each outcome has probability greater than or equal to $$0$$ and all outcomes sum up to $$1$$. 
+Explain how to choice of $$\lambda$$ does affect the shape of the distributions, but not the fact that they are distributions.
 
-Now you may wonder: this is all cute, but if we do not know $$\lambda$$ then why should I care? And you would be very much 
-right, which is exactly why we are going to try and find these $$\lambda$$ values based on the data we collect. 
+This is pretty neat. If I now know the $$\lambda$$ which describes the Poisson of the process we care about, 
+we can tell how likely all the different outcomes of the experiment are. Also, since we have a clean formula for the pmf,
+we can also reason about Poissons in general. For example, the mean of a Poisson is always $$\lambda$$, 
+the mode (i.e. highest value) is always $$\lfloor \lambda \rfloor$$, among other things.[^1] 
+
+Now you may wonder: this is all good and well, but how do we find this $$\lambda$$? This is exactly the point where we
+move into statistics rather than probability theory: we want to use data in order to find these $$\lambda$$ values.
 That is, suppose we have dataset $$\mathcal{D}$$ of observation, e.g. $$\mathcal{D} = \{2, 2, 3, 1, 2, 4, 5, 3, 5\}$$, 
 we can use statistics (and machine learning) to find which $$\lambda$$ fits the data the best. 
 This is done using techniques such as maximum likelihood estimation (MLE) and maximum a posteriori estimation (MAP). 
