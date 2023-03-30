@@ -327,7 +327,7 @@ $$\begin{align}
             \text{A}_{11}\text{B}_{11} + \text{A}_{12} \text{B}_{21} \\
            \text{A}_{21}\text{B}_{11} + \text{A}_{22}\text{B}_{21}
          \end{bmatrix},
-\end{align},$$
+\end{align}$$
 
 where we have used identities and properties described in the matrix-vector multiplication section. Now, if we write the
 matrix $$\mathbf{C}$$ in the following form:
@@ -366,6 +366,7 @@ Note that the elements of the matrix $$\mathbf{C}$$ would still be calculated us
 
 Next, let's take a look at two special types of matrices:
 - **Identity matrix:** Identity matrix is often denoted by $$\mathbf{I}$$ or $$\mathbb{I}$$, and it represents a matrix that leaves a vector unchanged, i.e. $$\mathbf{I}\mathbf{v} = \mathbf{v}$$. Such matrix has elements $$1$$ on the diagonal, and $$0$$ otherwise. For example, a $$3\times 3$$ identity matrix has the following form:
+- 
     $$\mathbf{I} = 
     \begin{bmatrix}
                1 & 0 & 0\\
@@ -374,13 +375,13 @@ Next, let's take a look at two special types of matrices:
     \end{bmatrix}$$
 - **Inverse matrix:** An inverse of a matrix $$\mathbf{A}$$ is denoted as $$\mathbf{A}^{-1}$$, and is defined by the following equation: $$\mathbf{A}^{-1}\mathbf{A} = \mathbf{A}\mathbf{A}^{-1} = \mathbf{I}$$. Intuitively, we can think of the inverse matrix $$\mathbf{A}^{-1}$$ as a matrix that counteracts the operation done by the matrix $$\mathbf{A}$$. Therefore, if we chain the two transformations together, it should be the same as if we did nothing (i.e. the total transformation is equal to the identity matrix $$\mathbf{I}$$). A matrix that has an inverse is called an invertible matrix, and only square matrices are invertible.
 
-Let's briefly summarize important information regarding matrix-matrix multiplication:
-
-- Using our formula we can find elements of a matrix that is the result of matrix-matrix multiplication. 
-- Multiplying a $$n \times k$$ matrix with a $$k \times m$$ matrix will result in a $$n \times m$$ matrix.
-- In general, matrix multiplication is not commutative, i.e. $$\mathbf{A}\mathbf{B} \neq \mathbf{B}\mathbf{A}$$. 
-- An identity matrix $$\mathbf{I}$$ leaves the vector unchanged.
-- Some square matrices $$\mathbf{A}$$ have an inverse, which is denoted by $$\mathbf{A}^{-1}$$.
+{: .summary}
+>Let's briefly summarize important information regarding matrix-matrix multiplication:
+>- Using our formula we can find elements of a matrix that is the result of matrix-matrix multiplication. 
+>- Multiplying a $$n \times k$$ matrix with a $$k \times m$$ matrix will result in a $$n \times m$$ matrix.
+>- In general, matrix multiplication is not commutative, i.e. $$\mathbf{A}\mathbf{B} \neq \mathbf{B}\mathbf{A}$$. 
+>- An identity matrix $$\mathbf{I}$$ leaves the vector unchanged.
+>- Some square matrices $$\mathbf{A}$$ have an inverse, which is denoted by $$\mathbf{A}^{-1}$$.
 
 
 

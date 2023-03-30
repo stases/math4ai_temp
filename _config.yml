@@ -34,3 +34,6 @@ callouts:
   motivation:
     title: Motivation
     color: yellow
+  summary:
+    title: Summary
+    color: green
