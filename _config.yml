@@ -31,3 +31,6 @@ callouts:
   proof:
     title: Proof
     color: blue
+  motivation:
+    title: Motivation
+    color: yellow

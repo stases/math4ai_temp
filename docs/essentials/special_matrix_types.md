@@ -8,6 +8,8 @@ title: Special Matrix Types
 
 
 # Special matrix types
+
+{: .motivation}
 In this section, we will take a general overview of important matrix types that are often used in machine learning, and analyze their properties which make them useful. This section can be seen as a collection of important identities and properties of various matrix types. Many identities will be presented along with their proofs, which serve as a good exercise as they show typical tricks used in linear algebra. 
 
 ## Symmetric matrix
