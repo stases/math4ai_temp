@@ -14,7 +14,9 @@ representation introduced in the previous section.
 Let's go one step further, and consider a function $$f: \mathbb{R}^2 \to \mathbb{R}$$ such that 
 $$f: \begin{bmatrix}x_1 \\ x_2\end{bmatrix} \mapsto x_1x_2^2$$. We can again draw this function:
 
-**add**
+<div class="text-center">
+  <img src="../figures/multivariate_calc/diag_mvc_3.png" width="25%" id="fig:diag3">
+</div>
     
 In this case, we can consider two derivatives: we can look at the effect of $$x_1$$ on $$y$$ and the effect of $$x_2$$ on $$y$$. 
 When we can consider multiple derivatives for different variables, we do not write $$\frac{dy}{dx_1}$$ but rather 
@@ -49,7 +51,9 @@ We can also have a function $$\textbf{f}: \mathbb{R} \to \mathbb{R}^2$$ which ma
 In this case, we have that $$\textbf{y} = \textbf{f}(x)$$ where $$\textbf{y}$$ is a vector (and hence is written in bold font), 
 and thus we can consider $$y_1 = x^2$$ and $$y_2 = \sqrt{x}$$. Drawing this, we find:
 
-**add**
+<div class="text-center">
+  <img src="../figures/multivariate_calc/diag_mvc_4.png" width="25%" id="fig:diag4">
+</div>
     
     
 When again looking at the paths, we see that
@@ -71,9 +75,9 @@ Consider the $$y = g(\textbf{h}(x))$$, where $$\textbf{h}(x) = (x^2, \ln (x))$$ 
 That is, $$y$$ is found by first calculating intermediate values $$u = x^2$$ and $$v = \ln (x)$$ and then finding 
 $$y= uv.$$ If we draw these functions, we see the following:
 
-**add**
-
-
+<div class="text-center">
+  <img src="../figures/multivariate_calc/diag_mvc_5.png" width="40%" id="fig:diag5">
+</div>
     
 It is now very clear that the effect of $$x$$ of $$y$$ is twofold: both through $$u$$ and $$v$$. As mentioned earlier, 
 we need to consider all streams of influence. Specifically, we **sum** the different paths/effects, i.e.:
@@ -94,8 +98,9 @@ and $$\textbf{h}(u, v) = (u^2, uv, v^2)$$. Find $$\frac{\partial y_2}{\partial x
 
 When visualizing this function, we get the following:
 
-**add**
-
+<div class="text-center">
+  <img src="../figures/multivariate_calc/diag_mvc_6.png" width="40%" id="fig:diag6">
+</div>
     
 When counting the paths from $$x_2$$ to $$y_2$$, we find two paths: one through $$u$$ and one through $$v$$. We hence find
 
