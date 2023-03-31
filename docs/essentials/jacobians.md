@@ -6,13 +6,14 @@ nav_order: 4
 title: Jacobians
 ---
 
-{: .content }
-In this section you will look at general patterns in higher-dimensional derivatives.
-
 
 # Jacobians
 
-## A new fried: Kronecker delta
+{: .motivation }
+As we have seen, computing multivariate derivatives can be quite convoluted. Luckily for us, we can often save **a lot** 
+of work in machine learning. In this section, we will cover some basic patterns of computing higher-dimensional derivatives.
+
+## A new friend: Kronecker delta
 
 One of the most iconic functions in deep learning is the 'linear layer', which takes some input $$\textbf{x} \in \mathbb{R}^m$$ 
 and takes $$n$$ linear combinations (with different factors) of the inputs. This linear layer can be considered a function 
@@ -144,4 +145,4 @@ on this and you will receive an excellent document written by two other TAs. If 
 on your way to doing machine learning soon enough! 
 
 {: .summary }
-In this section you have seen the Kronecker delta and a general strategy to finding multi-variate derivatives.
+In this section you have seen the Kronecker delta and a general strategy to finding multivariate derivatives.

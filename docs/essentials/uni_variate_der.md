@@ -6,12 +6,13 @@ nav_order: 2
 title: Univariate Derivatives
 ---
 
-{: .content }
-In this section you will study derivatives of regular functions $$f: \mathbb{R} \to \mathbb{R}$$. This section will serve
-as the basis for more the more complex derivatives of functions $$f: \mathbb{R}^m \to \mathbb{R}^n$$.
 
 # Univariate Derivatives
 
+{: .motivation }
+In this section, we introduce a visualization for computing derivatives of functions $$f: \mathbb{R} \to \mathbb{R}$$. 
+Not only will form the basis for both computing higher dimensional derivatives, it will also get you in the habit of
+thinking graphically about functions. This will be especially useful when doing deep learning later.
 
 Let us start nice and easy with our basic functions over the reals, i.e. functions $$f: \mathbb{R} \to \mathbb{R}$$. 
 Though this initially may look superfluous, we will introduce a visual way of representing these functions. This new 
@@ -77,7 +78,7 @@ $$\frac{df}{dx} = \frac{1}{2 \sqrt{v}} \cdot \frac{1}{\cos^2 u} \cdot 2 x.$$
 
 Using our substitutions, we can write this as 
 
-$$\frac{df}{dx} = \frac{1}{2 \sqrt{\tan (x^2)}} \cdot \frac{1}{\cos^2 (x^2)} \cdot 2 x = \frac{1}{\cos^2(x^2) \sqrt{\tan (x^2)}}.$$
+$$\frac{df}{dx} = \frac{1}{2 \sqrt{\tan (x^2)}} \cdot \frac{1}{\cos^2 (x^2)} \cdot 2 x = \frac{x}{\cos^2(x^2) \sqrt{\tan (x^2)}}.$$
 
 
 
@@ -86,4 +87,4 @@ $$\frac{df}{dx} = \frac{1}{2 \sqrt{\tan (x^2)}} \cdot \frac{1}{\cos^2 (x^2)} \cd
 
 {: .summary }
 In this section, you have seen: a graphical visualisation of functions and derivatives, the chain rule of differentiation,
-and the sum rule of differentiation.
+and the sum rule of differentiation in the context of standard functions $$f: \mathbb{R} \to \mathbb{R}$$.

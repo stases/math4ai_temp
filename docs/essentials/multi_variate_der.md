@@ -5,11 +5,15 @@ grand_parent: Essentials
 nav_order: 3
 title: Multivariate Derivatives
 ---
-{: .content }
-In this section you will study derivatives of functions $$f: \mathbb{R}^m \to \mathbb{R}^n$$ using the graphical
-representation introduced in the previous section.
+
+
 # Multivariate Derivatives
 
+{: .motivation }
+
+Often - especially in machine learning - we are working with functions with multiple input and/or outputs. In this section,
+we study how our existing differentiation techniques extend to this multivariate case using our graphical representation
+as introduced in the previous section.
 
 Let's go one step further, and consider a function $$f: \mathbb{R}^2 \to \mathbb{R}$$ such that 
 $$f: \begin{bmatrix}x_1 \\ x_2\end{bmatrix} \mapsto x_1x_2^2$$. We can again draw this function:
@@ -86,7 +90,7 @@ $$\frac{d y}{dx} = \frac{\partial y}{\partial u} \frac{du}{dx} + \frac{\partial 
 
 Plugging everything in, we find
 
-$$\frac{d y}{dx} = \frac{dy}{du} \frac{du}{dx} + \frac{dy}{dv} \frac{dv}{dx} = v \cdot 2x + u \cdot \frac{1}{x} = \ln(x) \cdot 2x + x^2 \cdot \frac{1}{x} =  2x (\ln (x) + \frac{1}{2}).$$
+$$\frac{d y}{dx} = \frac{\partial y}{\partial u} \frac{du}{dx} + \frac{\partial y}{\partial v} \frac{dv}{dx} = v \cdot 2x + u \cdot \frac{1}{x} = \ln(x) \cdot 2x + x^2 \cdot \frac{1}{x} =  2x (\ln (x) + \frac{1}{2}).$$
 
 You may recognize this as the product rule, now you know where that comes from!
 
@@ -116,6 +120,6 @@ This will be the topic of the rest of this section.
 
 
 {: .summary }
-In this section, you have seen: how to generalise the previous section to functions with multiple inputs and outputs.
+In this section we extended our graphical interpretation of derivatives to functions $$f: \mathbb{R}^m \to \mathbb{R}^n$$.
 
 [^1]: For pedagogical reasons, we will call all such higher-order derivatives of $y$ Jacobians and denote them with $$\frac{d\textbf{y}}{d\textbf{x}}$$, but in practice, most people will just use the word 'gradient' here anyway.
