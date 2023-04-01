@@ -8,8 +8,9 @@ title: Dot product
 
 # Dot product
 
+{: .motivation}
 So far, we have only seen two operations we can do with vectors: addition of vectors and multiplication of vectors by a scalar.
-The two operations combined allowed us to form a definition of a linear combination and basis. 
+The two operations combined allowed us to form a definition of a linear combination and basis. However, a vector space can be equipped with an inner product to allow for more operations. In this section, we will introduce the dot product, which is one of the most important operations in linear algebra.
 
 
 A vanilla vector space does not have any other operations that involve two vectors. However, a vector space can be equipped 
@@ -29,7 +30,10 @@ $$\left\lVert\mathbf{v}\right\rVert =  \sqrt{\sum_{i=1}^n a_i^2} \Longrightarrow
 As a simple example, let's imagine that we have a 2D vector $$\mathbf{c} = \mathbf{a}+\mathbf{b}$$, where $$\mathbf{a} = \begin{bmatrix}a,0\end{bmatrix}^\text{T}$$ 
 and $$\mathbf{a} = \begin{bmatrix}0,b\end{bmatrix}^\text{T}$$, as shown in the figure below:
 
-**add**
+<div class="text-center">
+  <img src="../figures/linalg/dot_product/1.png" alt="Caption of the figure." width="30%" id="fig:svd_matrices">
+</div>
+
 
 
 
@@ -54,8 +58,8 @@ similar as possible), and when it is equal to $$0$$, the vectors are perpendicul
 This can be interpreted as a measure of similarity (often called the _cosine similarity_), which is often used in many areas, 
 such as Natural Language Processing. 
 
-To sum up, we have introduced a new operation we can use to manipulate vectors, the dot product. It is a useful tool because 
-it allows us to easily calculate the norms of vectors, and also the cosine similarity between them. 
+{: .summary}
+We have introduced a new operation we can use to manipulate vectors, the dot product. The dot product can be used to calculate the norm or magnitude of a vector, as well as the cosine similarity between two vectors. When the cosine similarity is 1, the vectors are perfectly aligned, while a cosine similarity of 0 indicates that the vectors are perpendicular. This is often used in various fields of machine learning.
 
 [^1]: Inner product and a dot product are often used interchangeably, although there are subtle differences.
 [^2]: The symbol T stands for the transpose operation, which can be considered a flip of the vector/matrix over the main diagonal.}

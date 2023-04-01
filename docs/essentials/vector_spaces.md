@@ -8,7 +8,9 @@ title: Vector Spaces
 
 # Vector spaces
 
+{: .motivation}
 In order to introduce vector spaces, which is a space where vectors _live_, we will first try to motivate its formal definition which will follow later. 
+ The reason why we study vector spaces is because they provide a useful framework for representing and solving many problems in mathematics, physics, engineering, and computer science. For example, they are used in linear algebra to study linear equations and matrices, in computer graphics to represent shapes and animations, and in machine learning to represent data.
 
 ## Informal definition
 
@@ -77,8 +79,7 @@ In almost all cases, the field will simply be real numbers $$\mathbb{R}$$. Anoth
 If we come back to the hiking example, we were dealing with the vectors from $$\mathbb{R}^3$$, as we had 3 entries of the vector, 
 and each entry was a real number (coordinates are real numbers).
 
-## Summary 
-
+{: .summary}
 Vectors are objects that live in a vector space. It is important to note that a vector space is a space defined by only 
 two operations with objects: how to add objects and how to scale them. If we know how to do that, we call that space a vector space.
 In further sections, we will explore other ways to utilize and transform vectors besides the addition of vectors and multiplication by a scalar. 

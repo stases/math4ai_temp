@@ -8,9 +8,8 @@ title: Bases
 
 # Bases
 
-
-
-Similar to the previous section, we will first informally motivate the definition of a basis, and only then formalize it.
+{: .motivation}
+In linear algebra, basis helps us break down complex objects into a collection of simpler ones. A basis is a set of vectors that can represent any other vector in a given vector space. By using a basis, we can simplify computations, determine the dimension of the vector space, and perform operations in a more efficient way. We can think of basis as a set of ingredients which we can use to represent and vector in a given vector space. Similar to the previous section, we will first informally motivate the definition of a basis, and only then formalize it.
 
 ## Informal definition
 
@@ -160,3 +159,7 @@ basis elements by a linear combination of other basis elements. This is required
 
 The second condition tells us that we must be able to represent **any** vector from the vector space using a linear combination of the basis vectors. 
 These two conditions combined lead to the fact that for a basis of a $$n$$-dimensional vector space we must have exactly $$n$$ linearly independent basis vectors.
+
+
+{: .summary}
+In linear algebra, a basis is a set of vectors that allows us to uniquely represent any vector in a given vector space. By doing so, we break down complex objects into simpler components, making computations easier and providing insight into the structure of the vector space. A basis can be thought of as a set of independent vectors whose linear combination can uniquely represent any vector. Formally, vectors form a basis if and only if the basis vectors are linearly independent and they span the vector space.

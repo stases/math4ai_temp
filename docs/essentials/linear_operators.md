@@ -10,6 +10,8 @@ title: Linear Operators
 
 ## Mappings
 
+{: .motivation}
+In machine learning, we often work with high-dimensional data represented as vectors. Linear algebra provides us with powerful tools to manipulate these vectors, but besides the basic operations of vector addition and dot product, we also need functions that can transform a vector into another vector. These functions are called linear operators and are important because they enable us to perform operations on vectors in a more efficient way. In this section, we will first introduce the concept of linear operators, and then discuss some of the most important ones.
 
 In linear algebra, besides the operations that involve two vectors (vector addition, dot product), there are functions 
 (mappings) that take as an input a vector, and output a vector. Let's denote this mapping as $$f$$. 
@@ -272,13 +274,14 @@ $$\mathbf{w} = \begin{bmatrix}
            \end{bmatrix}.$$
 
 
-This is exactly the mapping $$f$$ defined in the mappings section![^1] 
+This is exactly the mapping $$f$$ defined in the mappings section![^2] 
 
-Let's summarize our current findings regarding matrix-vector multiplication:
-- We have a general formula for calculating how a matrix transforms a vector. 
-- The matrix-vector multiplication may or may not change the dimensionality of the input vector.
-- If we have a $$n \times k$$ matrix ($$n$$ rows, $$k$$ columns), then the input vector has to be $$k$$-dimensional, while the output will be $$n$$-dimensional. 
-- All linear transformations (in finite dimensions) can be written in the matrix form.  
+{: .summary}
+>Let's summarize our current findings regarding matrix-vector multiplication:
+>- We have a general formula for calculating how a matrix transforms a vector. 
+>- The matrix-vector multiplication may or may not change the dimensionality of the input vector.
+>- If we have a $$n \times k$$ matrix ($$n$$ rows, $$k$$ columns), then the input vector has to be $$k$$-dimensional, while the output will be $$n$$-dimensional. 
+>- All linear transformations (in finite dimensions) can be written in the matrix form.  
 
 
 ## Matrix-matrix multiplication
@@ -385,7 +388,7 @@ Next, let's take a look at two special types of matrices:
 
 
 
-[^1]: This is actually a very general result, all linear mappings (in finite dimensional vector spaces) can be written as matrix multiplication.
+[^2]: This is actually a very general result, all linear mappings (in finite dimensional vector spaces) can be written as matrix multiplication.
 
 
 

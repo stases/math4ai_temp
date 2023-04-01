@@ -24,7 +24,7 @@ $$
 \end{bmatrix}
 $$
 
-Now, let's denote the $i$-th column vector of the matrix $$\mathbf{A}$$ as $$\mathbf{a}_i$$. We can show that the third column vector $$\mathbf{a}_3$$ can be represented as a linear combination of the first two column vectors:
+Now, let's denote the $$i$$-th column vector of the matrix $$\mathbf{A}$$ as $$\mathbf{a}_i$$. We can show that the third column vector $$\mathbf{a}_3$$ can be represented as a linear combination of the first two column vectors:
 
 $$
 \mathbf{a}_3 = 2\, \mathbf{a}_1 + \mathbf{a_2} = \begin{bmatrix}
@@ -32,7 +32,7 @@ $$
 \end{bmatrix}
 $$
 
-From this we can see that one of the column vectors is not linearly independent, so the rank of the matrix $$\mathbf{A}$$ is equal to $2$ as we have two linearly independent vectors. 
+From this we can see that one of the column vectors is not linearly independent, so the rank of the matrix $$\mathbf{A}$$ is equal to $$2$$ as we have two linearly independent vectors. 
 
 
 We will list some important properties and implications of the rank, assuming that the matrix $$\mathbf{A}$$ is a $$m \times n$$ matrix.

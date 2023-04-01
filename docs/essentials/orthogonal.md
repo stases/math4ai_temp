@@ -14,7 +14,7 @@ When dealing with vectors, often we wish to know how much is one vector composed
 
 ## Projections
 <div class="text-center">
-  <img src="../figures/tikz_orthogonal.png" alt="Caption of the figure." width="35%" id="fig:orthogonal">
+  <img src="../figures/tikz_orthogonal.png" alt="Caption of the figure." width="30%" id="fig:orthogonal">
 </div>
 
 Figure 1:  _A visualization of the orthogonal projection of the vector $$\mathbf{a}$$ onto the vector $$\mathbf{c}$$, denoted as $$P_{\mathbf{c}}(\mathbf{a})$$. The black dashed line visually represents the projection operation._
@@ -165,7 +165,8 @@ $$
 
  We can see that evaluating coefficients in the expansion is very simple when using an orthonormal basis: each coefficient is equal to the dot product of the vector $$\mathbf{v}$$ with its corresponding basis vector. In the case of general basis, we would have to solve a system of linear equations in order to find coefficients of the expansion, which is much more complex. 
 
-
+{: .summary}
+In linear algebra, an orthogonal projection measures how much one vector is composed of another. An orthogonal projection is a linear operator that projects vectors onto a subspace, which does not do anything new if applied more than once. An orthonormal basis is a special type of basis that has two important properties: all vectors have unit lengths, and all basis vectors are perpendicular to each other. Orthonormal bases provide a consistent way to represent vectors, and allow for simpler calculations in certain cases. For example, the coefficients in the expansion of an arbitrary vector in an orthonormal basis are equal to the dot product of the vector with its corresponding basis vector.
 
 [^1]: This is a standard mathematical notation that means the following: a function $f$ takes as an input a vector from the vector space $$V$$ and outputs a vector from a vector space $$V$$.
 [^2]: The $$\lVert$$ symbol denotes that this is the component of the vector $$\mathbf{a}$$ which is parallel to $$\mathbf{c}$$.
