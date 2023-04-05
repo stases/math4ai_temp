@@ -5,17 +5,21 @@ grand_parent: Essentials
 nav_order: 3.5
 title: Graphical Models
 ---
-
-{: .content }
-In this section you will learn how to use independence to parametrize joints over many variables efficiently using graphical models
-
 # Graphical models
 
+{: .motivation }
+Often, we know our problem at hand and wish to use independence between variables to parametrize our 
+joint distribution efficiently. This is often done using **graphical models**, in which our variables form
+nodes in a graph and the edges from some variable to another indicate whether that first variable has 'direct influence'
+on the second. In this section, we will study one of the most common types of graphical models - the Bayesian Network -
+and show how using Bayesian Networks can save us many parameters needed to specify our joint.
+
+
 ## Why graphical models
-Although this might sound surprising to many, there is actually a lot of statistics we can do without specifying specific 
+Although this might sound surprising to many, there are a lot of statistics we can do without specifying specific 
 distributions over our variables. Our main way to go about that is through using **graphical models** in which we explicitly 
 define our variables and how they relate to each other. This allows us to formulate the (conditional) independence relationships 
-between the variables. As seen in the previous section, knowing independence relations between the random variables can 
+between the variables. As seen in the previous section, knowing independent relations between the random variables can 
 greatly reduce the number of parameters we need to learn for our joint distributions.
 
 Getting a bit more machine learning-y, suppose we care about $$4$$ different binary variables, denoted as $$X_1, X_2, X_3$$, and $$Y$$. 
@@ -24,11 +28,11 @@ $$X_2$$ is old/new house, and $$X_3$$ one/multiple floors) and $$Y$$ denotes whe
 We can imagine that these $$4$$ variables define one large joint distribution (of an unknown kind), i.e. for all values 
 $$x_1, x_2, x_3$$, and $$y$$, we could know $$\mathbb{P}(X_1 = x_1, X_2 = x_2, X_3 = x_3, Y=y)$$. It is important to 
 realize that when we have a joint distribution, we can find any marginal or conditional probability of the variable. 
-For example, to find the probability of the house being expensive, given is has few rooms and one floor, we can find this:
+For example, to find the probability of the house being expensive given it has few rooms and one floor, we can find this:
 
 $$\mathbb{P}(Y = 1 \mid X_1=0, X_2 = 0) = \frac{\mathbb{P}(Y=1, X_1 = 0, X_2 = 0)}{\mathbb{P}(X_1=0, X_2 = 0)},$$
 
-which we can evaluate through marginalisation by
+which we can evaluate through marginalization by
 
 $$\mathbb{P}(Y = 1 \mid X_1=0, X_2 = 0) = \frac{\sum_{x_3} 
  \mathbb{P}(Y=1, X_1 = 0, X_2 = 0, X_3=x_3)}{\sum_{y, x_3} 
@@ -43,6 +47,7 @@ We would have to specify $$10^{20}$$ different values. To put this into perspect
 grains of sand on the planet. 
 
 We will see that using graphical models and the independence relations they describe will allow us to reduce the number of parameters a lot.
+
 
 
 ## Bayesian networks
@@ -74,13 +79,13 @@ drink my espresso, the fireworks will be lit. Similarly, there will be an arrow 
 Now, suppose we make formal what we have written above. For each node in the graph, we can consider its 'parents', which are 
 all other nodes from which there exists a directed edge, i.e. for graph $$\mathcal{G} = (\mathcal{V}, \mathcal{E})$$, we denote
 $$\mathsf{Parents}(v_i) = \{v_j \in \mathcal{V} \mid (v_j, v_i) \in \mathcal{E}).$$ We say that a joint distribution 'follows' the
-bayensian network if the joint composes based on the parental structure in the graph. Suppose we have random variables $$X_1, \cdots, X_n$$,
+bayesian network if the joint composes based on the parental structure in the graph. Suppose we have random variables $$X_1, \cdots, X_n$$,
 and a graph $$\mathcal{G} = (\mathcal{V}, \mathcal{E})$$ where the nodes are the $$X_i$$. Then, if the 
 joint distribution decomposes as such
 
 $$\mathbb{P}(X_1, \cdots, X_n) = \prod_{i = 1}^n \mathbb{P}(X_i \mid \mathsf{Parents}(X_i)),$$
 
-we say that the joint 'decomposes over $$\mathcal{G}$$' and is a Bayesian network. So, in case of breakfast example, we would have that
+we say that the joint 'decomposes over $$\mathcal{G}$$' and is a Bayesian network. So, in the case of breakfast example, we would have that
 
 $$\mathbb{P}(S, E, F) = \mathbb{P}(S) \cdot \mathbb{P}(E) \cdot \mathbb{P} (F \mid S, E).$$
 
@@ -102,8 +107,10 @@ $$\mathbb{P}(X_1, \cdots, X_5) = \mathbb{P}(X_1) \cdot \mathbb{P}(X_2 \mid X_1) 
 
 In this factorization, we observe that we need $$15 - 1 = 14$$ parameters for the $$\mathbb{P}(X_1)$$ distribution, and need $$15 * 15 - 1 = 224$$ 
 parameters for each of the $$\mathbb{P}(X_i \mid X_{i-1})$$ distributions, i.e. a total of $$1134$$ parameters rather than the 
-ten million we started off with. 
+ten million we started with. 
 
+{: .content }
+In this section, we learned how to use independence to parametrize joints over many variables efficiently using graphical models.
 
 
 

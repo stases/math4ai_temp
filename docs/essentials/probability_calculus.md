@@ -8,24 +8,26 @@ title: Probability calculus
 
 # Probability calculus
 
-{: .content } 
-In this section we will deep dive into the calculus of probability. Specifically, we will learn how to answer queries
-such as marginals and conditionals given our joint distribution. For this, we need to meet a series of rules that will be some or our
-best friends when doing probability theory first.
+{: .motivation }
+In the previous section, we hinted that a joint distribution is very useful to have, for it allows us to answer any
+question we might have about (subsets of) the random variables. In this section, we will study how to compute these
+questions by introducing the most important rules of probability theory.
+
 
 ## Chain rule and conditional probabilities
 
 Suppose we have two random variables $$X$$ and $$Y$$ with joint distribution $$\mathbb{P}(X, Y)$$. We understand 
 $$\mathbb{P}(X=x, Y=y)$$ as the probability that $$X$$ has outcome $$x$$ and $$Y$$ has outcome $$y$$. Intuitively, we
-can also understand that joint probability as follows: my believe that $$X$$ will take on outcome $$x$$ and $$Y$$ takes on
+can also understand that joint probability as follows: my belief that $$X$$ will take on outcome $$x$$ and $$Y$$ takes on
 outcome $$y$$ can be 'decomposed' into my belief that $$X$$ will take on $$x$$ in general, and then that $$Y$$ takes on 
 value $$y$$ given that $$X$$ has taken on value $$x$$. For example, my belief in me studying well and passing the exam is 
 simply my belief in me studying well in general combined with my belief that if I study well, I will pass the exam. Formally,
 we write this as 
 
+
 $$\mathbb{P}(X=x, Y=y) = \mathbb{P}(X=x) \cdot \mathbb{P}(Y=y \mid X=x).$$
 
-Actually, the oposite reasoning also goes, so
+The opposite reasoning also goes, so
 
 $$\mathbb{P}(X=x, Y=y) = \mathbb{P}(Y=y) \cdot \mathbb{P}(X=x \mid Y=y).$$
 
@@ -36,7 +38,7 @@ $$\mathbb{P}(X, Y) = \mathbb{P}(X) \cdot \mathbb{P}(Y \mid X),$$
 
 to mean that $$\mathbb{P}(X=x, Y=y) = \mathbb{P}(X=x) \cdot \mathbb{P}(Y=y \mid X=x)$$ for all $$x$$ and $$y$$. 
 
-Moreover, this rule generalises, e.g.
+Moreover, this rule generalizes, e.g.
 
 $$\mathbb{P}(X, Y, Z) = \mathbb{P}(X) \cdot \mathbb{P}(Y, Z \mid X)$$
 
@@ -48,7 +50,7 @@ In its most general glory, it would say that
 
 $$\boxed{\mathbb{P}(X_1, \cdots, X_n) = \prod_{k=1}^n \mathbb{P}(X_k \mid X_1, \cdots, X_{k-1})}.$$
 
-Actually, this also gives us a way to define conditional probabilities directly. Since
+This also gives us a way to define conditional probabilities directly. Since
 
 $$\mathbb{P}(X, Y) = \mathbb{P}(X) \cdot \mathbb{P}(Y \mid X),$$
 
@@ -57,6 +59,7 @@ we know that
 $$\boxed{\mathbb{P}(Y \mid X) = \frac{\mathbb{P}(X, Y)}{\mathbb{P}(X)}}$$
 
 given that $$\mathbb{P}(X) \neq 0$$.
+
 
 
 
@@ -90,3 +93,7 @@ $$\boxed{\mathbb{P}(X \mid Y) = \frac{\mathbb{P}(Y \mid X) \cdot \mathbb{P}(X)}{
 
 This is called **Bayes' rule** and gives us a very nice way to 'swap' the variables in a conditional distribution. 
  
+{: .summary }
+In this section, we learned how to answer queries
+such as marginals and conditionals given our joint distribution. For this, we looked at the most important rules of 
+probability theory.
