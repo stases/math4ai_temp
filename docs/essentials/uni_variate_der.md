@@ -11,7 +11,7 @@ title: Univariate Derivatives
 
 {: .motivation }
 In this section, we introduce a visualization for computing derivatives of functions $$f: \mathbb{R} \to \mathbb{R}$$. 
-Not only will form the basis for both computing higher dimensional derivatives, it will also get you in the habit of
+Not only will form the basis for both computing higher dimensional derivatives, but it will also get you in the habit of
 thinking graphically about functions. This will be especially useful when doing deep learning later.
 
 Let us start nice and easy with our basic functions over the reals, i.e. functions $$f: \mathbb{R} \to \mathbb{R}$$. 
@@ -26,7 +26,7 @@ $$y = f(x) = x^2$$. In our example, we can visualize this function as follows:
 
 The blue squares represent **values** and the yellow rectangles represent ways to **determine** a value. 
 The most important insight you should take away is that the sensitivity of $$y$$ to $$x$$ is given by the sum of influences 
-of all the paths from $$x$$ to $$y$$. In this case, there is only one path, that is through the function $$x^2$$. Using basic 
+of all the paths from $$x$$ to $$y$$. In this case, there is only one path, which is through the function $$x^2$$. Using basic 
 differentiation techniques, we hence observe that:
 
 $$\frac{dy}{dx} = \frac{dx^2}{dx} = 2x.$$
@@ -42,7 +42,7 @@ If we make a diagram of this function as above, we can represent it as follows:
 </div>
 
 
-Please note that we had to introduce a new variable $$u := \sin (x)$$ that represents the intermediate value found after 
+Please note that we had to introduce a new variable $$u:= \sin (x)$$ that represents the intermediate value found after 
 applying the sine function to $$x$$. When finding the derivative of $$y$$ with respect to $$x$$, we again count all the paths 
 from $$x$$ to $$y$$. Again, there is only one path, now going through our intermediate value $$u$$. In this case, the effect 
 of $$x$$ on $$y$$ is equal to the effect of $$x$$ on $$u$$ times the effect of $$u$$ on $$y$$, i.e.
@@ -72,7 +72,7 @@ Here, we defined $$u := x^2$$, $$v:= \tan u$$, and $$y := \sqrt{v}$$. The effect
 the effect of $$u$$ on $$v$$ times the effect of $$v$$ on $$y$$, i.e.
 $$\frac{df}{dx} = \frac{dy}{dv} \frac{dv}{du} \frac{du}{dx}.$$
 
-Using basic derivative techniques, we therefore conclude that 
+Using basic derivative techniques, we, therefore, conclude that 
 
 $$\frac{df}{dx} = \frac{1}{2 \sqrt{v}} \cdot \frac{1}{\cos^2 u} \cdot 2 x.$$
 
@@ -86,5 +86,5 @@ $$\frac{df}{dx} = \frac{1}{2 \sqrt{\tan (x^2)}} \cdot \frac{1}{\cos^2 (x^2)} \cd
 [^1]: If you are not familiar with the $$\exp(x)$$ function, it is just another way to write $$e^x$$.
 
 {: .summary }
-In this section, you have seen: a graphical visualisation of functions and derivatives, the chain rule of differentiation,
+In this section, you have seen: a graphical visualization of functions and derivatives, the chain rule of differentiation,
 and the sum rule of differentiation in the context of standard functions $$f: \mathbb{R} \to \mathbb{R}$$.

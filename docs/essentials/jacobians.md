@@ -13,7 +13,7 @@ title: Jacobians
 As we have seen, computing multivariate derivatives can be quite convoluted. Luckily for us, we can often save **a lot** 
 of work in machine learning. In this section, we will cover some basic patterns of computing higher-dimensional derivatives.
 
-## A new friend: Kronecker delta
+## A new friend: Kronecker Delta
 
 One of the most iconic functions in deep learning is the 'linear layer', which takes some input $$\textbf{x} \in \mathbb{R}^m$$ 
 and takes $$n$$ linear combinations (with different factors) of the inputs. This linear layer can be considered a function 
@@ -38,7 +38,7 @@ We hence wanna find $$\frac{\partial y_i}{\partial x_j} = \frac{d}{dx_j} (\sum_{
 
 $$\frac{d}{dx_j} (\sum_{k=1}^m w_{ik}x_k) = \sum_{k=1}^m \frac{d}{dx_j} w_{ik}x_k.$$ 
 
-Let us know zoom in into one of the terms of the summation, i.e. we only consider $$\frac{d}{dx_j} w_{ik}x_k$$. If we have 
+Let us know zoom in on one of the terms of the summation, i.e. we only consider $$\frac{d}{dx_j} w_{ik}x_k$$. If we have 
 that $$x_k \neq x_j$$, we will always have that $$\frac{d}{dx_j} w_{ik}x_k = 0$$, because the entire term does not depend on 
 $$x_j$$. When $$x_j = x_k$$, however, we see that the derivative is given by $$w_{ik}$$. We can express this `if-else' statement 
 quite easily mathematically using something called the **Kronecker delta**. The Kronecker delta over two variables 
@@ -48,7 +48,7 @@ $$\delta_{ij} = \begin{cases}1& \text{ if } i = j \\ 0& \text{ otherwise }\end{c
 
 Sometimes this is written with so-called **Iverson brackets** as $$[i=j]$$. These brackets do the same thing, i.e. 
 $$[\mathsf{S}] = 1$$ if $$\mathsf{S}$$ is true, else $$[\mathsf{S}] = 0$$ for any statement $$\mathsf{S}$$. 
-The most important property (for us) of this Kronecker delta is that
+The most important property (for us) of this Kronecker Delta is that
 
 $$\sum_j \delta_{ij} x_j = x_i,$$
 
@@ -137,7 +137,7 @@ which aligns with our desired shape so we are done.
 
 So... That's quite a lot of work. And actually, we could have done way less work using our previous identities. 
 Observe that $$\mathbf{y^T A}$$ is just a row vector, i.e. it can be written as $$\mathbf{v^T = y^T A}$$ for some vector 
-$$\textbf{v}$$. Thus, we can write $$\mathbf{y^T Ax = v^T x}$$. But this we know how to differentiate with our tricks, that is 
+$$\textbf{v}$$. Thus, we can write $$\mathbf{y^T Ax = v^T x}$$. But we know how to differentiate with our tricks, that is 
 $$\frac{d}{d\textbf{x}} \mathbf{v^T x} = \mathbf{v^T}$$, and hence we know that $$\frac{d}{d\textbf{x}} \mathbf{y^T Ax} = \mathbf{y^T A}$$.
 
 This should cover the basics of vector calculus! During the first week of the course, we will spend some more time on time 
@@ -145,4 +145,4 @@ on this and you will receive an excellent document written by two other TAs. If 
 on your way to doing machine learning soon enough! 
 
 {: .summary }
-In this section you have seen the Kronecker delta and a general strategy to finding multivariate derivatives.
+In this section, you have seen the Kronecker delta and a general strategy for finding multivariate derivatives.
