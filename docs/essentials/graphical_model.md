@@ -56,7 +56,9 @@ A **directed graph** $$\mathcal{G} = (\mathcal{V}, \mathcal{E})$$ is pair of nod
 For example, the graph with nodes $$\mathcal{V} = \{v_1, v_2, v_3 \}$$ and edges $$\mathcal{E} = \{(v_1, v_2), (v_3, v_2)\}$$ 
 is given by:
 
-**add**
+<div class="text-center">
+  <img src="../figures/stats/graph_ex.png" width="25%" id="fig:diag_1">
+</div>
 
 If the edges have no direction, contrary to the graph above, we call the graph undirected. If we graph is directed, 
 there might be some path over the edges that cycles back to its starting point, in which case we call the graph **cyclic**. 
@@ -74,7 +76,10 @@ $$X$$ on $$Y$$. Since there is no reason to assume that the espresso I drink inf
 draw no arrow from $$E$$ to $$S$$ and visa versa. Moreover, there is a direct effect from $$E$$ to $$F$$, since if I 
 drink my espresso, the fireworks will be lit. Similarly, there will be an arrow from $$S$$ to $$F$$. This results in the following graph:
 
-**add**
+
+<div class="text-center">
+  <img src="../figures/stats/coffee_ex.png" width="25%" id="fig:diag_1">
+</div>
 
 Now, suppose we make formal what we have written above. For each node in the graph, we can consider its 'parents', which are 
 all other nodes from which there exists a directed edge, i.e. for graph $$\mathcal{G} = (\mathcal{V}, \mathcal{E})$$, we denote
@@ -95,11 +100,14 @@ Moreover, explain why if we add an edge from $$X$$ to $$Y$$ but $$X$$ does not g
 That is, it is OK to have too many edges, but having too few edges could harm us.
 
 
-Let us try one more example. Suppose we have $$6$$ variables that take on $$15$$ different values, $$Y_1$$ up to $$Y_6$$. In the naive setting, we would have that 
-$$\mathbb{P}(Y_1, \cdots, Y_6)$$ needs $$15^6 - 1 \approx 10^7$$ values. Suppose now, that the effects are pretty simple, e.g. 
+Let us try one more example. Suppose we have $$5$$ variables that take on $$15$$ different values, $$X_1$$ up to $$X_5$$. In the naive setting, we would have that 
+$$\mathbb{P}(X_1, \cdots, X_6)$$ needs $$15^6 - 1 \approx 10^7$$ values. Suppose now, that the effects are pretty simple, e.g. 
 $$X_1$$ affects directly only $$X_2$$, $$X_2$$ affects directly only $$X_3$$, and so on. That is, our graph looks like this:
 
-**add**
+
+<div class="text-center">
+  <img src="../figures/stats/big_ex.png" width="65%" id="fig:diag_1">
+</div>
 
 Then, we could write our joint as:
 
