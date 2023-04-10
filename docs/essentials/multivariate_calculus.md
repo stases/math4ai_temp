@@ -14,13 +14,10 @@ In multivariate calculus, we mainly concern ourselves with finding derivatives. 
 the **rate of change** of the function. With rate of change we refer to how quickly the function value increases at some 
 point $$x$$ when we increase the value of $$x$$. In the context of machine learning, 
 we are often very interested in a function that describes how well our model performs given our parameters, that is: we want
-to know which parameters give the best performance in our model. What we mean 
-with 'doing well' is not too important right now, so let us presume that we have some measure of 
-'doing well' for the time being.
-
+to know which parameters give the best performance in our model. 
 
 A running metaphor we will use is the following. We can imagine a variable $$y$$ which is formed through applying function $$f$$ to 
-$$x$$, i.e. $$y = f(x)$$. In this case, we call x an **input** and call y an **output**. We are often interested in 
+$$x$$, i.e. $$y = f(x)$$. In this case, we call $$x$$ an **input** and call $$y$$ an **output**. We are often interested in 
 studying how **sensitive** our outputs are to a change in the inputs, or how much our inputs **influence** our outputs, 
 as we will get more into it soon. This sensitivity is exactly what is captured by the derivative, e.g. if the derivative of the 
 output with respect to the input is large in some point, we know that output is 'sensitive' to a small change increase around 

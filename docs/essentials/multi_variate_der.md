@@ -15,6 +15,13 @@ Often - especially in machine learning - we are working with functions with mult
 we study how our existing differentiation techniques extend to this multivariate case using our graphical representation
 as introduced in the previous section.
 
+
+In general, we might be interested in functions with more than one input and output. For instance, if you give one input - e.g. a MRI scan -
+we might be interested in predicting a series of different outputs corresponding with different kinda of observations we could 
+predict on the scan. Similarly, maybe we might want to predict the average time someone will spend in the coffee shop we 
+opened based on their age, type of job, hobbies, and so on. In these cases, we would still like to compute derivatives of 
+functions to estimate how well our model does, and in this case we have derivatives for each output with respect to each input. 
+
 Let's go one step further, and consider a function $$f: \mathbb{R}^2 \to \mathbb{R}$$ such that 
 $$f: \begin{bmatrix}x_1 \\ x_2\end{bmatrix} \mapsto x_1x_2^2$$. We can again draw this function:
 
@@ -25,9 +32,12 @@ $$f: \begin{bmatrix}x_1 \\ x_2\end{bmatrix} \mapsto x_1x_2^2$$. We can again dra
 In this case, we can consider two derivatives: we can look at the effect of $$x_1$$ on $$y$$ and the effect of $$x_2$$ on $$y$$. 
 When we can consider multiple derivatives for different variables, we do not write $$\frac{dy}{dx_1}$$ but rather 
 $$\frac{\partial y}{\partial x_1}$$, to avoid confusion. We call such a derivative a **partial derivative**. 
-Considering our earlier metaphor, a derivative in a real function is just the effect of turning a knob of a machine 
-with one knob, whereas a partial derivative is an effect of turning one of the multiple knobs and keeping the other still. 
-Luckily for us, we can still apply our same tricks and count the paths from a variable to $$y$$. 
+Considering our earlier metaphor, a derivative of a standard real function is just the effect of turning a knob of a machine 
+with one knob, whereas a partial derivative is an effect of turning one of the multiple knobs and **keeping the other still**. 
+That is, $$\frac{\partial y}{\partial x_1}$$ tells us how much $$y$$ changes why $$x_1$$ is increased while $$x_2$$ is kept constant. 
+As such, we can also treat $$x_2$$ as a constant value when taking derivatives. Notice that as such we effectively have reduced
+the above setup to the uni-variate case.
+
 In this case, we have that there is only one path from $$x_1$$ to $$y$$, and only one path from $$x_2$$ to $$y$$, giving us:
 
 $$\frac{\partial y}{\partial x_1} = \frac{\partial x_1x_2^2}{\partial x_1} = x_2^2,$$
@@ -36,10 +46,11 @@ and
 
 $$\frac{\partial y}{\partial x_2} = \frac{\partial x_1x_2^2}{\partial x_2} = 2x_1x_2.$$
 
-Please note that since we only consider the influence of one variable at the time, all the other variables are **constant** when taking derivatives. 
 What we sometimes do, is write the 'full' derivative $$\frac{d f}{d\textbf{x}}$$ as the following vector:
 
-$$\frac{dy}{d\textbf{x}} = \begin{bmatrix} \frac{\partial f}{\partial x_1} & \frac{\partial f}{\partial x_2} \end{bmatrix} = \begin{bmatrix}x_2^2 & 2x_1x_2\end{bmatrix}.$$ 
+$$\frac{dy}{d\textbf{x}} = \begin{bmatrix} \frac{\partial f}{\partial x_1} & \frac{\partial f}{\partial x_2} \end{bmatrix} = \begin{bmatrix}x_2^2 & 2x_1x_2\end{bmatrix},$$
+
+where we understand $$\textbf{x} := \begin{bmatrix}x_1 \\ x_2 \end{bmatrix}.$$
 
 
 We call this full derivative a **gradient** in the case we have functions $$f: \mathbb{R}^n \to \mathbb{R}$$, denoted as 
@@ -74,8 +85,8 @@ $$\frac{d\textbf{y}}{dx} = \begin{bmatrix} 2x \\ \frac{1}{2\sqrt{x}} \end{bmatri
 
 Please note that if we have a function $$f: \mathbb{R}^n \to \mathbb{R}^m$$ our Jacobian will be of the shape $$m \times n$$. 
 
-Now we are finally ready to consider a function with multiple streams of influence. 
-Consider the $$y = g(\textbf{h}(x))$$, where $$\textbf{h}(x) = (x^2, \ln (x))$$ and $$g(u, v) = uv$$. 
+Now we are finally ready to consider a function with multiple streams of influence. Consider the function $$f(x) = x^2 \ln (x).$$ 
+When breaking this functions into smaller parts, we can write is as $$y = g(\textbf{h}(x))$$, where $$\textbf{h}(x) = (x^2, \ln (x))$$ and $$g(u, v) = uv$$. 
 That is, $$y$$ is found by first calculating intermediate values $$u = x^2$$ and $$v = \ln (x)$$ and then finding 
 $$y= uv.$$ If we draw these functions, we see the following:
 
@@ -122,4 +133,4 @@ This will be the topic of the rest of this section.
 {: .summary }
 In this section we extended our graphical interpretation of derivatives to functions $$f: \mathbb{R}^m \to \mathbb{R}^n$$.
 
-[^1]: For pedagogical reasons, we will call all such higher-order derivatives of $y$ Jacobians and denote them with $$\frac{d\textbf{y}}{d\textbf{x}}$$, but in practice, most people will just use the word 'gradient' here anyway.
+[^1]: For pedagogical reasons, we will call all such higher-order derivatives of $$y$$ Jacobians and denote them with $$\frac{d\textbf{y}}{d\textbf{x}}$$, but in practice, most people will just use the word 'gradient' here anyway.

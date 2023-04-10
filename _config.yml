@@ -25,9 +25,9 @@ callouts:
   note:
     title: Note
     color: purple
-  warning:
-    title: Warning
-    color: red
+  overview:
+    title: Overview
+    color: purple
   proof:
     title: Proof
     color: blue
