@@ -18,7 +18,7 @@ properties of the derivatives of complex functions.
 - $$f(x) = \log_b x \implies f'(x) = \frac{1}{\log (b) \cdot x}$$, and hence $$f(x) = \log x \implies f'(x) = \frac{1}{x}$$,
 - $$f(x) = \sin x \implies f'(x) = \cos x$$,
 - $$f(x) = \cos x \implies f'(x) = - \sin x$$,
-- $$f(x) = \tan x \implies f'(x) = \frac{1}{\cos^2 (x)}$$.
+- $$f(x) = \tan x \implies f'(x) = \frac{1}{\cos^2 x}$$.
 
 Moreover, it is useful to remember special cases of the second rule:
 - $$f(x) = x \implies f'(x) = 1$$,  
