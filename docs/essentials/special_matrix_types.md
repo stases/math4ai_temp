@@ -134,7 +134,8 @@ $$
 $$
 Therefore, the unitary matrix is an analogous version of the orthogonal matrix for complex-valued matrices. All properties that hold true for the orthogonal matrices also analogously hold for unitary matrices. 
 
-
+{: .summary}
+This section provides an overview of important matrix types commonly used in machine learning, along with their properties. Symmetric and Hermitian matrices are introduced as matrices whose transpose is equal to the matrix itself, with both being diagonalizable. Definite matrices, including positive (negative) definite and positive (negative) semi-definite matrices, are important in optimization theory and machine learning. Orthogonal matrices are real square matrices that preserve lengths and angles, while unitary matrices are their complex-valued counterparts.
 
 [^1]: If $$z$$ is a complex number in the form $$z=x+iy$$, then its complex conjugate is given by $$\bar{z}=x-iy$$.
 

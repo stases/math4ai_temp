@@ -8,6 +8,8 @@ title: Eigensystems
 
 # Eigensystems
 
+{: .motivation}
+We are often interested in vectors that are not affected by a transformation, and in this section we will find out how to find them and discuss some of their most important properties.
 
 In linear algebra, eigensystems denote a set of problems that include finding eigenvectors and eigenvalues. 
 The word _eigen_ comes from German and means 'own', which will make sense when we formulate the problem more concretely. 
@@ -63,5 +65,8 @@ have the determinant zero, and using this property, we can search for non-trivia
 the problem by looking for values of $\lambda$ that satisfy the following equation:
 
 $$\left| \mathbf{A} -\lambda \mathbf{I}\right| = 0.$$
+
+{: .summary}
+In this chapter, we explored eigensystems, which involve finding eigenvectors and eigenvalues of a given matrix. Eigenvectors are vectors that remain in the same direction but can be rescaled when a transformation is applied. Eigenvectors and eigenvalues have many applications in mathematics, including matrix diagonalizations Markov chains, and image compression. 
 
 [^1]: The equations of a linear system are independent if none of the equations can be derived algebraically from the others. In other words, we cannot write one equation as a linear combination of other equations.

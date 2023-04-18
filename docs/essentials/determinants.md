@@ -9,6 +9,9 @@ title: Determinants
 # Determinants
 
 
+{: .motivation}
+We are often interested in how much a transformation rescales the area (or volume in higher dimensions) of a certain shape. In this section we will introduce determinants, which are a way to measure this rescaling.
+
 In mathematics, a determinant is a scalar value that is a function of a matrix, denoted as det$$(\mathbf{A})$$ or $$\left| \mathbf{A}\right|$$. 
 Intuitively, we can think of a determinant as a measure of how much the unit area enclosed by original vectors changes under a transformation. 
 To visualize this, let's assume that we have a transformation $$\mathbf{A}$$ of the following form:
@@ -45,7 +48,7 @@ naturally follow from the intuition provided above.
 
 
 Firstly, we can see that determinants can be only defined for square matrices. In order to justify this claim, let's think 
-of how non-square act on vectors. Let's imagine we have a $$\mathbf{B} \in \mathbb{R}^{m\time n}$$ (i.e. we have a $$m \times n$$ matrix). 
+of how non-square act on vectors. Let's imagine we have a $$\mathbf{B} \in \mathbb{R}^{m\times n}$$ (i.e. we have a $$m \times n$$ matrix). 
 This means that the input vector is $$n$$-dimensional, while the output vector is $$m$$-dimensional. If we wish to calculate 
 the ratio of volumes, we can very quickly see that we come to a problem. In the original space, we had a $$n$$-dimensional volume, 
 while in the output space, we have a $$m$$-dimensional volume, and we cannot calculate the ratio of the two because we are 
@@ -69,3 +72,6 @@ calculate has to be invertible.
 We have shown a formula for calculating determinants of square invertible $$2\times 2$$ matrices, but how would we 
 generalize this for $$n \times n$$ matrices? There is a general formula is quite elaborate, however, in practice, you 
 will never calculate determinants of matrices by hand. 
+
+{: .summary}
+In mathematics, the determinant of a matrix is a scalar value that measures how much the unit area (or volume) enclosed by the original vectors changes under a transformation. Furthermore, we have intuitively explained why it can only be defined for square matrices. The formula for the determinant of an arbitrary $$n\times n$$ matrix is quite elaborate, but in practice, it is usually calculated some numerical libraries.

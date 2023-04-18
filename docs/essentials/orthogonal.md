@@ -19,7 +19,7 @@ When dealing with vectors, often we wish to know how much is one vector composed
 
 Figure 1:  _A visualization of the orthogonal projection of the vector $$\mathbf{a}$$ onto the vector $$\mathbf{c}$$, denoted as $$P_{\mathbf{c}}(\mathbf{a})$$. The black dashed line visually represents the projection operation._
 
-Formally, a projection on a vector space $$V$$ is a linear operator $$P:V \to V$$[^1], such that $$P^2 = P$$. In other words, projections are operators which do not do anything new if applied more than once. In the context of the orthogonal projection shown in Figure \ref{fig:orthogonal}, once we project the vector $$\mathbf{a}$$ onto $$\mathbf{c}$$, performing another projection will yield the same vector $$P_{\mathbf{c}}(\mathbf{a})$$. 
+Formally, a projection on a vector space $$V$$ is a linear operator $$P:V \to V$$[^1], such that $$P^2 = P$$. In other words, projections are operators which do not do anything new if applied more than once. In the context of the orthogonal projection shown in Figure 1, once we project the vector $$\mathbf{a}$$ onto $$\mathbf{c}$$, performing another projection will yield the same vector $$P_{\mathbf{c}}(\mathbf{a})$$. 
 
 This definition of a projection is very general, and orthogonal projections are only a subset of possible projections. Namely, orthogonal projections are operators which satisfy the property
 $$
@@ -168,5 +168,5 @@ $$
 {: .summary}
 In linear algebra, an orthogonal projection measures how much one vector is composed of another. An orthogonal projection is a linear operator that projects vectors onto a subspace, which does not do anything new if applied more than once. An orthonormal basis is a special type of basis that has two important properties: all vectors have unit lengths, and all basis vectors are perpendicular to each other. Orthonormal bases provide a consistent way to represent vectors, and allow for simpler calculations in certain cases. For example, the coefficients in the expansion of an arbitrary vector in an orthonormal basis are equal to the dot product of the vector with its corresponding basis vector.
 
-[^1]: This is a standard mathematical notation that means the following: a function $f$ takes as an input a vector from the vector space $$V$$ and outputs a vector from a vector space $$V$$.
+[^1]: This is a standard mathematical notation that means the following: a function $$f$$ takes as an input a vector from the vector space $$V$$ and outputs a vector from a vector space $$V$$.
 [^2]: The $$\lVert$$ symbol denotes that this is the component of the vector $$\mathbf{a}$$ which is parallel to $$\mathbf{c}$$.

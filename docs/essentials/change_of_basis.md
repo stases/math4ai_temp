@@ -8,6 +8,8 @@ title: Change of Basis
 
 # Change of Basis
 
+{: .motivation}
+Intuitively, we do not want the effect done by a matrix to depend on the basis we use to express the matrix. For this reason, adjust the entries of the matrix depending on which basis we are using. In this section, we will introduce a consistent way to express the same effect of a matrix in an arbitrary basis.
 
 In the previous section, the elements of the matrix were determined by how they transform the basis vectors. Let's 
 take a closer look at two different basis in $$\mathbb{R}^2$$: a canonical basis $$\{ \mathbf{b_1}, \mathbf{b_2}\}$$ 
@@ -82,5 +84,9 @@ $$\mathbf{S}^{-1}\, \mathbf{d_1} = \begin{bmatrix}
 
 which is exactly the expected result, because if we speak the _language_ of the $$\{\mathbf{d_1}, \mathbf{d_2}\}$$ basis, 
 we would write the vector $$\mathbf{d_1}$$ as $$\mathbf{d_1} = \begin{bmatrix}1,0\end{bmatrix}^{\text{T}}$$. 
+
+{: .summary}
+In this section, we have found a way that ensures that the effect of a matrix doesn't depend on the basis used. To do so, we adjust the matrix entries depending on the basis. To transform a matrix from the canonical basis to an arbitrary basis, we take a vector from the new basis, transform it to the old basis, apply the matrix, and transform the result back to the new basis. 
+
 
 [^1]: In this context, translation is meant in the context of the language, not as a spatial translation.
