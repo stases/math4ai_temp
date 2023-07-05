@@ -7,63 +7,64 @@
   <title>{{ page.title }}</title>
   <!-- Add your head content here -->
   <style>
-    /* CSS to make the image full-screen */
-    body {
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-    }
-    .image-container {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-    }
-    .image-container img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    /* Styles for the dropdown */
-    .dropdown {
-      position: absolute;
-      top: 20px; /* Adjust the position as needed */
-      left: 20px; /* Adjust the position as needed */
-    }
-    .dropdown-btn {
-      background: none;
-      border: none;
-      cursor: pointer;
-      color: #ffffff;
-      font-weight: bold;
-      font-size: 20px; /* Adjust the font size as needed */
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    }
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #f9f9f9;
-      min-width: 150px;
-      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-      z-index: 1;
-    }
-    .dropdown.active .dropdown-content {
-      display: block;
-    }
-    .dropdown-content a {
-      color: black;
-      padding: 12px 16px;
-      text-decoration: none;
-      display: block;
-      font-size: 18px; /* Adjust the font size as needed */
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Add the text shadow */
-    }
-    .dropdown-content a:hover {
-      background-color: #f1f1f1;
-    }
-  </style>
+  /* CSS to make the image full-screen */
+  body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  .image-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+  .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  /* Styles for the dropdown */
+  .dropdown {
+    position: absolute;
+    top: 20px; /* Adjust the position as needed */
+    left: 20px; /* Adjust the position as needed */
+  }
+.dropdown-btn {
+    color: black;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow */
+    background: rgba(255, 255, 255, 0.5); /* semi-transparent blue background */
+    padding: 10px; /* Adds space around the text */
+    border-radius: 15px; /* Rounds the corners of the button */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Adds a soft shadow */
+    /* the rest of your properties... */
+}
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  .dropdown.active .dropdown-content {
+    display: block;
+  }
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 13px; /* Adjust the font size as needed */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Add the text shadow */
+  }
+  .dropdown-content a:hover {
+    background-color: #f1f1f1;
+  }
+</style>
   <script>
     function toggleDropdown(dropdownId) {
       var dropdown = document.getElementById(dropdownId);
@@ -73,9 +74,9 @@
 </head>
 <body>
 <div class="image-container">
-  <img src="/imgs/island.png" alt="Roadmap" usemap="#chaptermap">
+  <img src="/imgs/island_2.png" alt="Roadmap" usemap="#chaptermap">
 
-  <div id="dropdown1" class="dropdown" style="top: 35%; left: 8%;">
+  <div id="dropdown1" class="dropdown" style="top: 3%; left: 3%;">
     <button class="dropdown-btn" onclick="toggleDropdown('dropdown1')">Probability Theory</button>
     <div class="dropdown-content">
       <a href="link1.html">Lecture Notes</a>
@@ -84,7 +85,7 @@
     </div>
   </div>
 
-  <div id="dropdown2" class="dropdown" style="top: 77%; left: 45%;">
+  <div id="dropdown2" class="dropdown" style="top: 15%; left: 15%;">
     <button class="dropdown-btn" onclick="toggleDropdown('dropdown2')">Linear Regression</button>
     <div class="dropdown-content">
       <a href="link1.html">Lecture Notes</a>
